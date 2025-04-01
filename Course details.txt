@@ -1,0 +1,3997 @@
+﻿Course Name: INDEPENDENT STUDY
+Course ID: BITS C790T
+L: 0
+T: 0
+P: 0
+
+
+Course Name: TEACHING PRACTICE I
+Course ID: BITS C791T
+L: 0
+T: 0
+P: 0
+
+
+Course Name: PH D SEMINAR
+Course ID: BITS C797T
+L: 0
+T: 0
+P: 0
+
+
+Course Name: PH D THESIS
+Course ID: BITS C799T
+L: 0
+T: 0
+P: 0
+
+
+Course Name: FOUND OF DATA STRUC & ALGO
+Course ID: BITS F232
+L: 1
+T: 0
+P: 0
+
+
+Course Name: Image Processing
+Course ID: BITS F311
+L: 0
+T: 0
+P: 0
+
+
+Course Name: Neural Networks and Fuzzy Logic
+Course ID: BITS F312
+L: 0
+T: 0
+P: 0
+
+
+Course Name: ARTIFICIAL INTEL FOR ROBOTICS 
+Course ID: BITS F327
+L: 1
+T: 0
+P: 1
+
+
+Course Name: Project on Social and Environmental Applications of Data Science
+Course ID: BITS F329
+L: 0
+T: 0
+P: 0
+
+
+Course Name: Fuzzy Logic and application
+Course ID: BITS F343
+L: 1
+T: 0
+P: 0
+
+
+Course Name: HUMAN COMP INTERACTION
+Course ID: BITS F364
+L: 1
+T: 0
+P: 0
+
+
+Course Name: READING COURSE
+Course ID: BITS F382
+L: 0
+T: 0
+P: 0
+
+
+Course Name: Quantum Information and Computation
+Course ID: BITS F386
+L: 1
+T: 0
+P: 0
+
+
+Course Name: BLOCKCHAIN TECHNOLOGY
+Course ID: BITS F452
+L: 1
+T: 0
+P: 0
+
+
+Course Name: COMPUTATIONAL LEARNING THEORY
+Course ID: BITS F453
+L: 1
+T: 0
+P: 0
+
+
+Course Name: BIO-INSP INTELLI: ALGO & APPL
+Course ID: BITS F454
+L: 1
+T: 0
+P: 0
+
+
+Course Name: COMPUTER VISION
+Course ID: BITS F459
+L: 3
+T: 4
+P: 0
+
+
+Course Name: CRYPTOGRAPHY
+Course ID: BITS F463
+L: 1
+T: 0
+P: 0
+
+
+Course Name: MACHINE LEARNING
+Course ID: BITS F464
+L: 1
+T: 0
+P: 0
+
+
+Course Name: Enterprise Computing
+Course ID: BITS F465
+L: 1
+T: 0
+P: 1
+
+
+Course Name: Service Oriented Computing
+Course ID: BITS F466
+L: 1
+T: 0
+P: 1
+
+
+Course Name: Research Practice (ME)
+Course ID: BITS G540
+L: 0
+T: 0
+P: 0
+
+
+Course Name: REAL TIME SYSTEMS
+Course ID: BITS G553
+L: 1
+T: 0
+P: 0
+
+
+Course Name: Dissertation
+Course ID: BITS G629T
+L: 0
+T: 0
+P: 0
+
+
+Course Name: Practice School
+Course ID: BITS G639
+L: 0
+T: 0
+P: 0
+
+
+Course Name: DEV & USE OF COMP SOFT
+Course ID: BITS G644
+L: 0
+T: 0
+P: 0
+
+
+Course Name: OPTIMIZATION METHODS FOR ANALYTICS
+Course ID: BA ZC414
+L: 1
+T: 0
+P: 0
+
+
+Course Name: DATA VISUALIZATION
+Course ID: BA ZC420
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ONLINE SOCIAL MEDIA
+Course ID: BCS ZC113
+L: 1
+T: 0
+P: 0
+
+
+Course Name: VIDEO GAMES - TECHNOLOGY AND SOCIAL IMPACTS
+Course ID: BCS ZC114
+L: 1
+T: 0
+P: 0
+
+
+Course Name: BIOLOGY LABORATORY
+Course ID: BIO F110
+L: 0
+T: 0
+P: 1
+
+
+Course Name: GENERAL BIOLOGY
+Course ID: BIO F111
+L: 3
+T: 0
+P: 0
+
+
+Course Name: BIOLOGICAL CHEMISTRY
+Course ID: BIO F211
+L: 1
+T: 1
+P: 0
+
+
+Course Name: MICROBIOLOGY
+Course ID: BIO F212
+L: 1
+T: 0
+P: 2
+
+
+Course Name: CELL BIOLOGY
+Course ID: BIO F213
+L: 1
+T: 1
+P: 0
+
+
+Course Name: INTEGRATED BIOLOGY
+Course ID: BIO F214
+L: 1
+T: 1
+P: 0
+
+
+Course Name: BIOPHYSICS
+Course ID: BIO F215
+L: 1
+T: 1
+P: 0
+
+
+Course Name: WATER, SANITATION AND SOLID WASTE MANAGEMENT
+Course ID: BIO F216
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ECOLOGY & ENVIRON SCI
+Course ID: BIO F241
+L: 1
+T: 1
+P: 0
+
+
+Course Name: INTRO TO BIOINFORMATICS
+Course ID: BIO F242
+L: 1
+T: 1
+P: 0
+
+
+Course Name: GENETICS
+Course ID: BIO F243
+L: 1
+T: 1
+P: 0
+
+
+Course Name: INSTRU METHODS OF ANAL
+Course ID: BIO F244
+L: 1
+T: 0
+P: 1
+
+
+Course Name: STUDY PROJECT
+Course ID: BIO F266
+L: 0
+T: 0
+P: 0
+
+
+Course Name: RECOMBINANT DNA TECH
+Course ID: BIO F311
+L: 1
+T: 1
+P: 0
+
+
+Course Name: PLANT PHYSIOLOGY
+Course ID: BIO F312
+L: 1
+T: 1
+P: 0
+
+
+Course Name: ANIMAL PHYSIOLOGY
+Course ID: BIO F313
+L: 1
+T: 1
+P: 0
+
+
+Course Name: DEVELOPMENTAL BIOLOGY
+Course ID: BIO F341
+L: 1
+T: 1
+P: 0
+
+
+Course Name: IMMUNOLOGY
+Course ID: BIO F342
+L: 1
+T: 1
+P: 0
+
+
+Course Name: LABORATORY PROJECT
+Course ID: BIO F366/BIO F367
+L: 0
+T: 0
+P: 0
+
+
+Course Name: DESIGN PROJECT
+Course ID: BIO F376/BIO F377
+L: 0
+T: 0
+P: 0
+
+
+Course Name: MOLECULAR BIOLOGY OFCELL
+Course ID: BIO F413
+L: 1
+T: 0
+P: 0
+
+
+Course Name: BIOMOLECULAR MODELLING
+Course ID: BIO F417
+L: 1
+T: 0
+P: 0
+
+
+Course Name: GENETIC ENGINEERING TECHNIQUES
+Course ID: BIO F418
+L: 1
+T: 0
+P: 1
+
+
+Course Name: MOLECULAR EVOLUTION
+Course ID: BIO F419
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ENZYMOLOGY
+Course ID: BIO F421
+L: 1
+T: 0
+P: 0
+
+
+Course Name: FUNDAMENTAL OF TISSUE ENGG
+Course ID: BIO F422
+L: 1
+T: 0
+P: 0
+
+
+Course Name: BIOCHEMICAL ENGINEERING
+Course ID: BIO F441
+L: 1
+T: 0
+P: 0
+
+
+Course Name: BIOPROCESS TECHNOLOGY
+Course ID: BIO F451
+L: 1
+T: 0
+P: 0
+
+
+Course Name: SPECIAL PROJECT
+Course ID: BIO F491
+L: 0
+T: 0
+P: 0
+
+
+Course Name: MOLEC MECH OF GENE EXPRE
+Course ID: BIO G512
+L: 1
+T: 0
+P: 0
+
+
+Course Name: MICROBIAL AND FERMENTATION TECHNOLOGY
+Course ID: BIO G513
+L: 1
+T: 0
+P: 0
+
+
+Course Name: MOLECULAR IMMUNOLOGY
+Course ID: BIO G514
+L: 1
+T: 0
+P: 0
+
+
+Course Name: STEM CELL AND REGENERATIVE BIOLOGY
+Course ID: BIO G515
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ADV & APPLIED MICROBIO
+Course ID: BIO G523
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ANIMAL CELL TECHNOLOGY
+Course ID: BIO G524
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ENVIRONMENTAL BIOTECH & WASTE MANAGEMENT
+Course ID: BIO G525
+L: 1
+T: 0
+P: 0
+
+
+Course Name: CANCER BIOLOGY
+Course ID: BIO G526
+L: 1
+T: 0
+P: 0
+
+
+Course Name: BIOSTATISTICS AND BIOMODELLING
+Course ID: BIO G532
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ADVANCED CELL MOLE BIO
+Course ID: BIO G542
+L: 1
+T: 0
+P: 0
+
+
+Course Name: EXPERIMENTAL TECHNIQUES
+Course ID: BIO G642
+L: 0
+T: 0
+P: 1
+
+
+Course Name: PLANT BIOTECHNOLOGY
+Course ID: BIO G643
+L: 1
+T: 0
+P: 0
+
+
+Course Name: PROTEIN AND ENZYME BIOENGINEERING
+Course ID: BIO G651
+L: 1
+T: 0
+P: 0
+
+
+Course Name: GENE TOXICOLOGY
+Course ID: BIO G661
+L: 1
+T: 0
+P: 0
+
+
+Course Name: PROTEOMICS
+Course ID: BIOT F345
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ΝΑΝΟΒΙΟTECHNOLOGY
+Course ID: BIOT F422
+L: 1
+T: 0
+P: 0
+
+
+Course Name: FOOD BIOTECHNOLOGY
+Course ID: BIOT F424
+L: 1
+T: 0
+P: 0
+
+
+Course Name: INDEPENDENT STUDY
+Course ID: BITS C790T
+L: 0
+T: 0
+P: 0
+
+
+Course Name: TEACHING PRACTICE I
+Course ID: BITS C791T
+L: 0
+T: 0
+P: 0
+
+
+Course Name: TEACHING PRACTICE II
+Course ID: BITS C792T
+L: 0
+T: 0
+P: 0
+
+
+Course Name: PH D SEMINAR
+Course ID: BITS C797T
+L: 0
+T: 0
+P: 0
+
+
+Course Name: PHD THESIS
+Course ID: BITS C799T
+L: 0
+T: 0
+P: 0
+
+
+Course Name: STUDY IN ADVANCED TOPICS I
+Course ID: BITS E573
+L: 0
+T: 0
+P: 0
+
+
+Course Name: CASE STUDIES I
+Course ID: BITS E583
+L: 0
+T: 0
+P: 0
+
+
+Course Name: RESEARCH METHODOLOGY I
+Course ID: BITS E661
+L: 0
+T: 0
+P: 0
+
+
+Course Name: RESEARCH METHODOLOGY II
+Course ID: BITS E662
+L: 0
+T: 0
+P: 0
+
+
+Course Name: PRACTICE LECT SERIES I
+Course ID: BITS E793T
+L: 0
+T: 0
+P: 0
+
+
+Course Name: PRACTICE LECT SERIES II
+Course ID: BITS E794T
+L: 0
+T: 0
+P: 0
+
+
+Course Name: ENGINEERING GRAPHICS
+Course ID: BITS F110
+L: 1
+T: 1
+P: 2
+
+
+Course Name: THERMODYNAMICS
+Course ID: BITS F111
+L: 1
+T: 1
+P: 0
+
+
+Course Name: TECHNICAL REPORT WRITING
+Course ID: BITS F112
+L: 1
+T: 0
+P: 0
+
+
+Course Name: INTRODUCTION TO ENVIRONMENTAL STUDIES
+Course ID: BITS F225
+L: 1
+T: 0
+P: 0
+
+
+Course Name: FOUND OF DATA STRUC & ALGO
+Course ID: BITS F232
+L: 1
+T: 0
+P: 0
+
+
+Course Name: GAME THEORY AND IT'S APPLICATIONS
+Course ID: BITS F314
+L: 1
+T: 0
+P: 0
+
+
+Course Name: INTRODUCTION TO COGNITIVE NEUROSCIENCE
+Course ID: BITS F315
+L: 1
+T: 0
+P: 0
+
+
+Course Name: NONLINEAR DYNAMICS AND CHAOS
+Course ID: BITS F316
+L: 1
+T: 0
+P: 0
+
+
+Course Name: THEORETICAL NEUROSCIENCE
+Course ID: BITS F317
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ARTIFICIAL INTELLIGENCE FOR ROBOTICS
+Course ID: BITS F327
+L: 1
+T: 0
+P: 1
+
+
+Course Name: SOCIAL AND ENVIRONMENTAL APPLICATIONS OF DATA SCIENCE
+Course ID: BITS F329
+L: 0
+T: 0
+P: 0
+
+
+Course Name: HUMAN – COMPUTER INTERACTION
+Course ID: BITS F364
+L: 1
+T: 0
+P: 0
+
+
+Course Name: READING COURSE
+Course ID: BITS F382
+L: 0
+T: 0
+P: 0
+
+
+Course Name: QUANTUM INFORMATION AND COMPUTATION
+Course ID: BITS F386
+L: 1
+T: 0
+P: 0
+
+
+Course Name: INTRODUCTION TO MEMS
+Course ID: BITS F415
+L: 1
+T: 0
+P: 0
+
+
+Course Name: INTRO TO NANO SCIENCE
+Course ID: BITS F416
+L: 1
+T: 0
+P: 0
+
+
+Course Name: MICRO-FLUIDICS & ITS APP
+Course ID: BITS F417
+L: 1
+T: 0
+P: 0
+
+
+Course Name: MANAGEMENT OF CROSS CULTURAL ENGINEERING TEAMS
+Course ID: BITS F419
+L: 1
+T: 0
+P: 0
+
+
+Course Name: THESIS
+Course ID: BITS F421T/BITS F422T/BITS F423T
+L: 0
+T: 0
+P: 0
+
+
+Course Name: TECHNICAL COMMUNICATION
+Course ID: BITS F437
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ANALYTICS FOR SUPPLY CHAIN
+Course ID: BITS F455
+L: 1
+T: 0
+P: 0
+
+
+Course Name: RENEWABLE ENERGY
+Course ID: BITS F462
+L: 1
+T: 0
+P: 0
+
+
+Course Name: CRYPTOGRAPHY
+Course ID: BITS F463
+L: 1
+T: 0
+P: 0
+
+
+Course Name: MACHINE LEARNING
+Course ID: BITS F464
+L: 1
+T: 0
+P: 0
+
+
+Course Name: Enterprise Computing
+Course ID: BITS F465
+L: 1
+T: 0
+P: 1
+
+
+Course Name: Service Oriented Computing
+Course ID: BITS F466
+L: 1
+T: 0
+P: 1
+
+
+Course Name: ADVANCED PROJECT
+Course ID: BITS G511
+L: 0
+T: 0
+P: 0
+
+
+Course Name: STUDY IN ADVANCED TOPICS
+Course ID: BITS G513
+L: 0
+T: 0
+P: 0
+
+
+Course Name: WRITING SEMINAR
+Course ID: BITS G518
+L: 0
+T: 0
+P: 0
+
+
+Course Name: RESEARCH PROJECT I
+Course ID: BITS G529
+L: 0
+T: 0
+P: 0
+
+
+Course Name: RESEARCH PROJECT II
+Course ID: BITS G539
+L: 0
+T: 0
+P: 0
+
+
+Course Name: RESEARCH PRACTICE
+Course ID: BITS G540
+L: 0
+T: 0
+P: 0
+
+
+Course Name: REAL TIME SYSTEMS
+Course ID: BITS G553
+L: 1
+T: 0
+P: 0
+
+
+Course Name: DISSERTATION
+Course ID: BITS G562T
+L: 0
+T: 0
+P: 0
+
+
+Course Name: DISSERTATION
+Course ID: BITS G563T
+L: 0
+T: 0
+P: 0
+
+
+Course Name: DISSERTATION
+Course ID: BITS G565
+L: 0
+T: 0
+P: 0
+
+
+Course Name: PROFESSIONAL PRACTICE
+Course ID: BITS G619
+L: 0
+T: 0
+P: 0
+
+
+Course Name: PROFESSIONAL PRACTICE I
+Course ID: BITS G620
+L: 0
+T: 0
+P: 0
+
+
+Course Name: PROFESSIONAL PRACTICE II
+Course ID: BITS G621
+L: 0
+T: 0
+P: 0
+
+
+Course Name: DISSERTATION
+Course ID: BITS G629T
+L: 0
+T: 0
+P: 0
+
+
+Course Name: PRACTICE SCHOOL
+Course ID: BITS G639
+L: 0
+T: 0
+P: 0
+
+
+Course Name: READING COURSE
+Course ID: BITS G649
+L: 0
+T: 0
+P: 0
+
+
+Course Name: ADV INSTRUMENTATION TECH
+Course ID: BITS G654
+L: 0
+T: 0
+P: 0
+
+
+Course Name: RESEARCH METHODOLOGY I
+Course ID: BITS G661
+L: 0
+T: 0
+P: 0
+
+
+Course Name: BUSINESS COMMUNICATION
+Course ID: BSPS* ZC221
+L: 1
+T: 0
+P: 0
+
+
+Course Name: CHEMICAL PROCESS CALCULA
+Course ID: CHE F211
+L: 1
+T: 1
+P: 0
+
+
+Course Name: FLUID MECHANICS
+Course ID: CHE F212
+L: 1
+T: 1
+P: 0
+
+
+Course Name: CHEM ENGG THERMODYNAMICS
+Course ID: CHE F213
+L: 1
+T: 1
+P: 0
+
+
+Course Name: ENGG CHEMISTRY
+Course ID: CHE F214
+L: 1
+T: 1
+P: 0
+
+
+Course Name: HEAT TRANSFER
+Course ID: CHE F241
+L: 1
+T: 1
+P: 0
+
+
+Course Name: NUMERICAL METHODS FOR CHEMICAL ENGINEERS
+Course ID: CHE F242
+L: 1
+T: 1
+P: 0
+
+
+Course Name: MATERIAL SCIENCE & ENGINEERING
+Course ID: CHE F243
+L: 1
+T: 1
+P: 0
+
+
+Course Name: SEPARATION PROCESSES I
+Course ID: CHE F244
+L: 1
+T: 1
+P: 0
+
+
+Course Name: STUDY PROJECT
+Course ID: CHE F266
+L: 0
+T: 0
+P: 0
+
+
+Course Name: KINETICS & REACTOR DESIGN
+Course ID: CHE F311
+L: 1
+T: 1
+P: 0
+
+
+Course Name: CHEMICAL ENGINEERING LABORATORY I
+Course ID: CHE F312
+L: 0
+T: 0
+P: 1
+
+
+Course Name: SEPARATION PROCESSES II
+Course ID: CHE F313
+L: 1
+T: 1
+P: 0
+
+
+Course Name: PROCESS DESIGN PRINCIPLES I
+Course ID: CHE F314
+L: 1
+T: 1
+P: 0
+
+
+Course Name: CHEMICAL ENGG LAB II
+Course ID: CHE F341
+L: 0
+T: 0
+P: 1
+
+
+Course Name: PROCESS DYN & CONTROL
+Course ID: CHE F342
+L: 1
+T: 1
+P: 0
+
+
+Course Name: PROCESS DES PRINCIPLE II
+Course ID: CHE F343
+L: 1
+T: 0
+P: 0
+
+
+Course Name: LABORATORY PROJECT
+Course ID: CHE F366/CHE F367
+L: 0
+T: 0
+P: 0
+
+
+Course Name: DESIGN PROJECT
+Course ID: CHE F376/CHE F377
+L: 0
+T: 0
+P: 0
+
+
+Course Name: ENVIRONMENTAL POLLUTION CONTROL
+Course ID: CHE F411
+L: 1
+T: 0
+P: 0
+
+
+Course Name: PROCESS EQUIPMENT DESIGN
+Course ID: CHE F412
+L: 1
+T: 0
+P: 0
+
+
+Course Name: PROCESS PLANT SAFETY
+Course ID: CHE F413
+L: 1
+T: 0
+P: 0
+
+
+Course Name: TRANSPORT PHENOMENA
+Course ID: CHE F414
+L: 1
+T: 0
+P: 0
+
+
+Course Name: MOLECULAR AND STATISTICAL THERMODYNAMICS
+Course ID: CHE F415
+L: 1
+T: 0
+P: 0
+
+
+Course Name: CHEMICAL PROCESS TECHNOLOGY
+Course ID: CHE F419
+L: 1
+T: 0
+P: 0
+
+
+Course Name: BIO-CHEMICAL ENGINEERING
+Course ID: CHE F421
+L: 1
+T: 0
+P: 0
+
+
+Course Name: PETROLEUM REFINING TECHNOLOGY
+Course ID: CHE F422
+L: 1
+T: 0
+P: 0
+
+
+Course Name: CORROSION ENGINEERING
+Course ID: CHE F433
+L: 1
+T: 0
+P: 0
+
+
+Course Name: SPECIAL PROJECTS
+Course ID: CHE F491
+L: 0
+T: 0
+P: 0
+
+
+Course Name: ENVIRONMENTAL MANAGEMENT SYSTEMS
+Course ID: CHE G513
+L: 1
+T: 0
+P: 0
+
+
+Course Name: POLYMER TECHNOLOGY
+Course ID: CHE G522
+L: 1
+T: 0
+P: 0
+
+
+Course Name: MATHEMATICAL METHODS IN CHEMICAL ENGINEERING
+Course ID: CHE G523
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ADVANCED TRANSPORT PHENOMENA
+Course ID: CHE G552
+L: 1
+T: 0
+P: 0
+
+
+Course Name: CHEMICAL PROCESS OPTIMIZATION
+Course ID: CHE G558
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ADVANCED MASS TRANSFER
+Course ID: CHE G613
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ADVANCED CHEMICAL ENGINEERING THERMODYNAMICS
+Course ID: CHE G622
+L: 1
+T: 0
+P: 0
+
+
+Course Name: REACTION ENGINEERING
+Course ID: CHE G641
+L: 1
+T: 0
+P: 0
+
+
+Course Name: CHEMISTRY LABORATORY
+Course ID: CHEM F110
+L: 0
+T: 0
+P: 1
+
+
+Course Name: GENERAL CHEMISTRY
+Course ID: CHEM F111
+L: 0
+T: 1
+P: 0
+
+
+Course Name: PHYSICAL CHEMISTRY I
+Course ID: CHEM F211
+L: 1
+T: 1
+P: 0
+
+
+Course Name: ORGANIC CHEMISTRY I
+Course ID: CHEM F212
+L: 1
+T: 1
+P: 0
+
+
+Course Name: PHYSICAL CHEMISTRY II
+Course ID: CHEM F213
+L: 1
+T: 1
+P: 0
+
+
+Course Name: INORGANIC CHEMISTRY I
+Course ID: CHEM F214
+L: 1
+T: 1
+P: 0
+
+
+Course Name: COLLOID AND SURFACE CHEMISTRY
+Course ID: CHEM F223
+L: 1
+T: 0
+P: 0
+
+
+Course Name: INORGANIC CHEMISTRY II
+Course ID: CHEM F241
+L: 1
+T: 1
+P: 0
+
+
+Course Name: CHEMICAL EXPER I
+Course ID: CHEM F242
+L: 0
+T: 0
+P: 1
+
+
+Course Name: ORGANIC CHEMISTRY II
+Course ID: CHEM F243
+L: 1
+T: 1
+P: 0
+
+
+Course Name: PHYSICAL CHEMISTRY III
+Course ID: CHEM F244
+L: 1
+T: 1
+P: 0
+
+
+Course Name: STUDY PROJECT
+Course ID: CHEM F266
+L: 0
+T: 0
+P: 0
+
+
+Course Name: ORGANIC CHEMISTRY III
+Course ID: CHEM F311
+L: 1
+T: 1
+P: 0
+
+
+Course Name: PHYSICAL CHEMISTRY IV
+Course ID: CHEM F312
+L: 1
+T: 1
+P: 0
+
+
+Course Name: INSTRU METHODS OF ANAL
+Course ID: CHEM F313
+L: 1
+T: 0
+P: 1
+
+
+Course Name: BIOPHYSICAL CHEMISTRY
+Course ID: CHEM F323
+L: 1
+T: 0
+P: 0
+
+
+Course Name: CHEMISTRY OF MATERIALS
+Course ID: CHEM F333
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ORGANIC CHEMISTRY AND DRUG DESIGN
+Course ID: CHEM F335
+L: 1
+T: 0
+P: 0
+
+
+Course Name: POLYMER CHEMISTRY
+Course ID: CHEM F325
+L: 1
+T: 0
+P: 0
+
+
+Course Name: SOLID STATE CHEMISTRY
+Course ID: CHEM F326
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ELECTROCHEMISTRY: FUNDAMENTALS AND APPLICATIONS
+Course ID: CHEM F327
+L: 1
+T: 0
+P: 0
+
+
+Course Name: SUPRAMOLECULAR CHEMISTRY
+Course ID: CHEM F328
+L: 1
+T: 0
+P: 0
+
+
+Course Name: CHEMICAL EXPERIMENTATION II
+Course ID: CHEM F341
+L: 0
+T: 0
+P: 1
+
+
+Course Name: ORGANIC CHEMISTRY IV
+Course ID: CHEM F342
+L: 1
+T: 1
+P: 0
+
+
+Course Name: INORGANIC CHEMISTRY III
+Course ID: CHEM F343
+L: 1
+T: 1
+P: 0
+
+
+Course Name: LABORATORY PROJECT
+Course ID: CHEM F366/CHEM F367
+L: 0
+T: 0
+P: 0
+
+
+Course Name: DESIGN PROJECT
+Course ID: CHEM F376/CHEM F377
+L: 0
+T: 0
+P: 0
+
+
+Course Name: BIO AND CHEMICAL SENSORS
+Course ID: CHEM F414
+L: 1
+T: 0
+P: 0
+
+
+Course Name: SUSTAINABLE CHEMISTRY USING RENEWABLES
+Course ID: CHEM F431
+L: 1
+T: 0
+P: 0
+
+
+Course Name: SPECIAL PROJECT
+Course ID: CHEM F491
+L: 0
+T: 0
+P: 0
+
+
+Course Name: IMPACT OF CLIMATE CHANGE ON WATER
+Course ID: CE F326
+L: 1
+T: 0
+P: 0
+
+
+Course Name: COMPUTER PROGRAMMING
+Course ID: CS F111
+L: 1
+T: 0
+P: 1
+
+
+Course Name: DATA STRUCTURES & ALGO
+Course ID: CS F211
+L: 1
+T: 0
+P: 1
+
+
+Course Name: DATABASE SYSTEMS
+Course ID: CS F212
+L: 1
+T: 0
+P: 1
+
+
+Course Name: OBJECT ORIENTED PROG
+Course ID: CS F213
+L: 1
+T: 0
+P: 1
+
+
+Course Name: LOGIC IN COMPUTER SC
+Course ID: CS F214
+L: 1
+T: 1
+P: 0
+
+
+Course Name: DIGITAL DESIGN
+Course ID: CS F215
+L: 1
+T: 1
+P: 1
+
+
+Course Name: DISCR STRUC FOR COMP SCI
+Course ID: CS F222
+L: 1
+T: 1
+P: 0
+
+
+Course Name: MICROPROC & INTERFACING
+Course ID: CS F241
+L: 1
+T: 1
+P: 1
+
+
+Course Name: STUDY PROJECT
+Course ID: CS F266
+L: 0
+T: 0
+P: 0
+
+
+Course Name: PRINCIPLES OF PROGG LANG
+Course ID: CS F301
+L: 1
+T: 1
+P: 0
+
+
+Course Name: COMPUTER NETWORKS
+Course ID: CS F303
+L: 1
+T: 0
+P: 1
+
+
+Course Name: SOFTWARE DEVELOPMENT FOR PORTABLE DEVICES
+Course ID: CS F314
+L: 1
+T: 0
+P: 0
+
+
+Course Name: Information and Communication Technologies and Development
+Course ID: CS F315
+L: 1
+T: 0
+P: 0
+
+
+Course Name: QUANTUM ARCHITECTURE AND PROGRAMMING
+Course ID: CS F316
+L: 1
+T: 0
+P: 0
+
+
+Course Name: REINFORCEMENT LEARNING
+Course ID: CS F317
+L: 1
+T: 0
+P: 0
+
+
+Course Name: FOUNDATIONS OF DATA SCIENCE
+Course ID: CS F320
+L: 1
+T: 0
+P: 0
+
+
+Course Name: SYSTEM SECURITY
+Course ID: CS F321
+L: 3
+T: 0
+P: 0
+
+
+Course Name: KNOWLEDGE GRAPHS FOUNDATIONS AND APPLICATIONS
+Course ID: CS F322
+L: 3
+T: 0
+P: 0
+
+
+Course Name: COMPUTER ARCHITECTURE
+Course ID: CS F342
+L: 1
+T: 0
+P: 1
+
+
+Course Name: THEORY OF COMPUTATION
+Course ID: CS F351
+L: 1
+T: 1
+P: 0
+
+
+Course Name: COMPILER CONSTRUCTION
+Course ID: CS F363
+L: 1
+T: 0
+P: 1
+
+
+Course Name: DESIGN & ANAL OF ALGO
+Course ID: CS F364
+L: 1
+T: 0
+P: 0
+
+
+Course Name: LABORATORY PROJECT
+Course ID: CS F366
+L: 0
+T: 0
+P: 0
+
+
+Course Name: LABORATORY PROJECT
+Course ID: CS F367
+L: 0
+T: 0
+P: 0
+
+
+Course Name: OPERATING SYSTEMS
+Course ID: CS F372
+L: 1
+T: 1
+P: 0
+
+
+Course Name: DESIGN PROJECT
+Course ID: CS F376
+L: 0
+T: 0
+P: 0
+
+
+Course Name: DESIGN PROJECT
+Course ID: CS F377
+L: 0
+T: 0
+P: 0
+
+
+Course Name: Multimedia Computing
+Course ID: CS F401
+L: 1
+T: 0
+P: 0
+
+
+Course Name: COMPUTATIONAL GEOMETRY
+Course ID: CS F402
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ARTIFICIAL INTELLIGENCE
+Course ID: CS F407
+L: 1
+T: 0
+P: 0
+
+
+Course Name: Internetworking Technologies
+Course ID: CS F413
+L: 1
+T: 0
+P: 0
+
+
+Course Name: DATA MINING
+Course ID: CS F415
+L: 1
+T: 0
+P: 0
+
+
+Course Name: PARALLEL COMPUTING
+Course ID: CS F422
+L: 1
+T: 0
+P: 0
+
+
+Course Name: SOFTWARE FOR EMBEDED SYS
+Course ID: CS F424
+L: 1
+T: 0
+P: 1
+
+
+Course Name: DEEP LEARNING
+Course ID: CS F425
+L: 1
+T: 0
+P: 0
+
+
+Course Name: Graph Mining
+Course ID: CS F426
+L: 1
+T: 0
+P: 1
+
+
+Course Name: Performance Analysis of Computer Networks
+Course ID: CS F427
+L: 1
+T: 0
+P: 0
+
+
+Course Name: Special topic in Computer Science
+Course ID: CS F428
+L: 1
+T: 0
+P: 0
+
+
+Course Name: NATURAL LANGUAGE PROCESSING
+Course ID: CS F429
+L: 1
+T: 0
+P: 0
+
+
+Course Name: Approximation Algorithms
+Course ID: CS F430
+L: 1
+T: 0
+P: 0
+
+
+Course Name: COMBINATORIAL OPTIMIZATION
+Course ID: CS F431
+L: 1
+T: 0
+P: 0
+
+
+Course Name: BRAIN-INSPIRED DEEP LEARNING
+Course ID: CS F432
+L: 1
+T: 0
+P: 0
+
+
+Course Name: COMPUTATIONAL NEUROSCIENCE
+Course ID: CS F433
+L: 1
+T: 0
+P: 0
+
+
+Course Name: DATA SCIENCE FOR HEALTHCARE
+Course ID: CS F434
+L: 3
+T: 0
+P: 0
+
+
+Course Name: CYBER SECURITY ANALYTICS  AND FORENSICS 
+Course ID: CS F435
+L: 3
+T: 0
+P: 1
+
+
+Course Name: CYBER PHYSICAL SYSTEMS AND SECURITY
+Course ID: CS F436
+L: 3
+T: 0
+P: 1
+
+
+Course Name: GENERATIVE AI
+Course ID: CS F437
+L: 1
+T: 0
+P: 0
+
+
+Course Name: SELECTED TOPICS  FROM COMPUTER SCIENCE
+Course ID: CS F441
+L: 0
+T: 0
+P: 0
+
+
+Course Name: REALTIME SYSTEMS
+Course ID: CS F444
+L: 1
+T: 0
+P: 0
+
+
+Course Name: DATA STORAGE TECHNOLOGIES AND NETWORKS
+Course ID: CS F446
+L: 1
+T: 0
+P: 0
+
+
+Course Name: INFORMATION SECURITY PROJECT
+Course ID: CS F468
+L: 0
+T: 0
+P: 1
+
+
+Course Name: Information Retrieval
+Course ID: CS F469
+L: 1
+T: 0
+P: 0
+
+
+Course Name: SPECIAL PROJECT
+Course ID: CS F491
+L: 0
+T: 0
+P: 0
+
+
+Course Name: NETWORK SECURITY
+Course ID: CS G513
+L: 1
+T: 0
+P: 0
+
+
+Course Name: Object Oriented Analysis and Design
+Course ID: CS G514/SSG514
+L: 1
+T: 0
+P: 0
+
+
+Course Name: Advanced Database Systems
+Course ID: CS G516
+L: 1
+T: 0
+P: 1
+
+
+Course Name: INTERNET OF THINGS: DESIGN AND DEVELOPMENT
+Course ID: CS G518
+L: 1
+T: 0
+P: 0
+
+
+Course Name: SOCIAL MEDIA ANALYTICS 
+Course ID: CS G519
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ADVANCED DATA MINING
+Course ID: CS G520
+L: 1
+T: 0
+P: 0
+
+
+Course Name: SOFT FOR EMBED SYS
+Course ID: CS G523
+L: 1
+T: 0
+P: 1
+
+
+Course Name: ADV COMPUTER ARCHITECTURE
+Course ID: CS G524
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ADVANCED COMPUTER NETWORKS
+Course ID: CS G525
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ADVANCED ALGORITHMS AND COMPLEXITY
+Course ID: CS G526
+L: 1
+T: 0
+P: 0
+
+
+Course Name: CLOUD COMPUTING
+Course ID: CS G527
+L: 1
+T: 0
+P: 0
+
+
+Course Name: HIGH PERFORMANCE HETEROGENEOUS COMPUTING
+Course ID: CS G532
+L: 3
+T: 0
+P: 5
+
+
+Course Name: SOFTWARE ENGINEERING FOR MACHINE LEARNED SYSTEMS
+Course ID: CS G533
+L: 0
+T: 0
+P: 0
+
+
+Course Name: PERVASIVE COMPUTING
+Course ID: CS G541
+L: 1
+T: 0
+P: 0
+
+
+Course Name: Advance Compilation Techniques
+Course ID: CS G551
+L: 1
+T: 0
+P: 0
+
+
+Course Name: Reconfigurable Computing
+Course ID: CS G553
+L: 1
+T: 0
+P: 0
+
+
+Course Name: Distributed Data Systems
+Course ID: CS G554
+L: 1
+T: 0
+P: 1
+
+
+Course Name: DISTRIBUTED COMPUTING
+Course ID: CS G557
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ADVANCED ARCHITECTURE AND PERFORMANCE EVALUATION
+Course ID: CS G562
+L: 3
+T: 0
+P: 2
+
+
+Course Name: Network Security Project
+Course ID: CS G568
+L: 0
+T: 0
+P: 1
+
+
+Course Name: DISTRIBUTED PROCESSING SYSTEMS
+Course ID: CS G611
+L: 2
+T: 0
+P: 2
+
+
+Course Name: Fault Tolerant System Design
+Course ID: CS G612
+L: 1
+T: 0
+P: 1
+
+
+Course Name: ADVANCED OPERATING SYSTEMS
+Course ID: CS G623
+L: 1
+T: 0
+P: 0
+
+
+Course Name: NETWORK SECURITY
+Course ID: CSIZ G513/ESZ G513/SSZ G513
+L: 1
+T: 0
+P: 1
+
+
+Course Name: Introduction to Data Science
+Course ID: CSIZ G523/BAZ G523
+L: 1
+T: 0
+P: 0
+
+
+Course Name: INTRODUCTION TO DATA SCIENCE
+Course ID: CSIZ G532
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ADVANCED ENGINEERING MATHEMATICS
+Course ID: DE *ZG535
+L: 1
+T: 0
+P: 0
+
+
+Course Name: FRACTURE MECHANICS
+Course ID: DE G514
+L: 1
+T: 0
+P: 0
+
+
+Course Name: PRODUCT DESIGN
+Course ID: DE G531
+L: 1
+T: 0
+P: 1
+
+
+Course Name: DYNAMICS & VIBRATION
+Course ID: DE G611
+L: 1
+T: 0
+P: 0
+
+
+Course Name: MATERIALS TECH & TESTING
+Course ID: DE G631
+L: 1
+T: 0
+P: 0
+
+
+Course Name: FINITE ELEMENT METHODS
+Course ID: DE ZG513
+L: 1
+T: 0
+P: 0
+
+
+Course Name: PRINCIPLES OF ECONOMICS
+Course ID: ECON F211
+L: 1
+T: 1
+P: 0
+
+
+Course Name: FUNDAMENTALS OF FINANCE AND ACCOUNTING
+Course ID: ECON F212
+L: 1
+T: 0
+P: 0
+
+
+Course Name: MATHEMATIC & STAT METHOD
+Course ID: ECON F213
+L: 1
+T: 1
+P: 0
+
+
+Course Name: ECONOMIC ENV OF BUSINESSS
+Course ID: ECON F214
+L: 1
+T: 1
+P: 0
+
+
+Course Name: COMPUTATIONAL METHODS FOR ECONOMICS
+Course ID: ECON F215
+L: 1
+T: 1
+P: 0
+
+
+Course Name: STUDY PROJECT
+Course ID: ECON F266
+L: 0
+T: 0
+P: 0
+
+
+Course Name: INTERNATIONAL ECONOMICS
+Course ID: ECON F311
+L: 1
+T: 1
+P: 0
+
+
+Course Name: MONEY BANK & FIN MARKETS
+Course ID: ECON F312
+L: 1
+T: 1
+P: 0
+
+
+Course Name: ISSUES IN ECONOMIC DEVELOPMENT
+Course ID: ECON F313
+L: 1
+T: 1
+P: 0
+
+
+Course Name: FINANCIAL MANAGEMENT
+Course ID: ECON F315/FIN F315
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ECONOMETRIC METHODS
+Course ID: ECON F241
+L: 1
+T: 1
+P: 0
+
+
+Course Name: MICROECONOMICS
+Course ID: ECON F242
+L: 1
+T: 1
+P: 0
+
+
+Course Name: MACROECONOMICS
+Course ID: ECON F243
+L: 1
+T: 1
+P: 0
+
+
+Course Name: ECONOMIC OF GROWTH & DEV
+Course ID: ECON F244
+L: 1
+T: 1
+P: 0
+
+
+Course Name: PUBLIC FINANCE THEORY & POLICY
+Course ID: ECON F341
+L: 1
+T: 1
+P: 0
+
+
+Course Name: APPLIED ECONOMETRICS
+Course ID: ECON F342
+L: 1
+T: 1
+P: 0
+
+
+Course Name: ECONOMIC ANAL OF PUB POL
+Course ID: ECON F343
+L: 1
+T: 1
+P: 0
+
+
+Course Name: DERIVATIVES AND RISK MANAGEMENT
+Course ID: ECON F354/FIN F311
+L: 1
+T: 0
+P: 0
+
+
+Course Name: BUSINESS ANALYSIS AND VALUATION
+Course ID: ECON F355
+L: 1
+T: 0
+P: 0
+
+
+Course Name: LABORATORY PROJECT
+Course ID: ECON F366/ECON F367
+L: 0
+T: 0
+P: 0
+
+
+Course Name: DESIGN PROJECT
+Course ID: ECON F376/ECON F377
+L: 0
+T: 0
+P: 0
+
+
+Course Name: SECURITY ANALYSIS AND PORTFOLIO MANAGEMENT
+Course ID: ECON F412/FIN F313
+L: 1
+T: 0
+P: 0
+
+
+Course Name: NEW VENTURE CREATION
+Course ID: ECON F415
+L: 1
+T: 0
+P: 0
+
+
+Course Name: APPLIED MACROECONOMETRICS
+Course ID: ECON F420
+L: 1
+T: 0
+P: 0
+
+
+Course Name: SPECIAL PROJECT
+Course ID: ECON F491
+L: 0
+T: 0
+P: 0
+
+
+Course Name: ENVIRONMENTAL BIOTECHNOLOGY
+Course ID: EE *ZG512
+L: 1
+T: 0
+P: 0
+
+
+Course Name: PHY CHE TREAT P& D FOR WW SYS
+Course ID: EE *ZG521
+L: 1
+T: 0
+P: 0
+
+
+Course Name: WATER AND WASTEWATER TREATMENT SYSTEMS
+Course ID: EE G502
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ENVIRONMENTAL STATISTICS
+Course ID: EE G506
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ENVIRONMENTAL PROCESS ENGINEERING
+Course ID: EE G605
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ENVIRONMENTAL BIOTECHNOLOGY
+Course ID: EE ZG512/SSTM ZG522
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ENV SAMPLING & ANAL METHODS
+Course ID: EE ZG514/SSTM ZG516
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ENVIRONMENTAL MGMT SYSTEM
+Course ID: EE* ZG515/SSTM* ZG527
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ENVIRONMENTAL SAMPLING AND ANALYTICAL METHODS
+Course ID: EE* ZG514
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ENVIRONMENTAL MANAGEMENT SYSTEMS
+Course ID: EE* ZG515/SSTM* ZG527
+L: 1
+T: 0
+P: 0
+
+
+Course Name: PHYSICO – CHEMICAL TREATMENT PRINCIPLES & DESIGN FOR WASTEWATER SYSTEMS
+Course ID: EE* ZG521
+L: 1
+T: 0
+P: 0
+
+
+Course Name: SOLID WASTE MANAGEMENT
+Course ID: EE ZG621/SSTM ZG526
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ENVIRONMENTAL PROCESS ENGINEERING
+Course ID: EE ZG622
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ELECTRICAL SCIENCES
+Course ID: EEE F111
+L: 1
+T: 1
+P: 0
+
+
+Course Name: ELECTRICAL MACHINES
+Course ID: EEE F211/INSTR F211/ECE F211
+L: 1
+T: 1
+P: 1
+
+
+Course Name: ELECTROMAGNETIC THEO/ELECTROMAGNETIC THEO I
+Course ID: EEE F212/INSTR F212/ECE F212
+L: 1
+T: 1
+P: 0
+
+
+Course Name: ELECTRONIC DEVICES
+Course ID: EEE F214/INSTR F214/ECE F214
+L: 1
+T: 1
+P: 0
+
+
+Course Name: DIGITAL DESIGN
+Course ID: EEE F215/INSTR F215/ECE F215
+L: 1
+T: 1
+P: 1
+
+
+Course Name: ELECTRONIC DEVICES SIMULATION LABORATORY
+Course ID: EEE F216
+L: 0
+T: 0
+P: 1
+
+
+Course Name: MICROPROCESSORS & INTERFACING
+Course ID: EEE F241/ECE F241/INSTR F241
+L: 1
+T: 1
+P: 1
+
+
+Course Name: CONTROL SYSTEMS
+Course ID: EEE F242/ECE F242/INSTR F242
+L: 1
+T: 1
+P: 0
+
+
+Course Name: SIGNALS & SYSTEMS
+Course ID: EEE F243/ECE F243/INSTR F243
+L: 1
+T: 1
+P: 0
+
+
+Course Name: MICROELECTRONIC CIRCUITS
+Course ID: EEE F244/ECE F244/INSTR F244
+L: 1
+T: 1
+P: 0
+
+
+Course Name: STUDY PROJECT
+Course ID: EEE F266/ECE F266/INSTR F266
+L: 0
+T: 0
+P: 0
+
+
+Course Name: COMMUNICATION SYSTEMS
+Course ID: EEE F311/ECE F311
+L: 1
+T: 0
+P: 2
+
+
+Course Name: POWER SYSTEMS
+Course ID: EEE F312
+L: 1
+T: 1
+P: 0
+
+
+Course Name: ANALOG & DIGIT VLSI DES
+Course ID: EEE F313/INSTR F313
+L: 1
+T: 1
+P: 0
+
+
+Course Name: EM FIELDS AND MICROWAVE ENGINEERING
+Course ID: EEE F314/ECE F314
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ANALOG ELECTRONICS
+Course ID: EEE F341/ECE F341/INSTR F341
+L: 1
+T: 1
+P: 0
+
+
+Course Name: POWER ELECTRONICS
+Course ID: EEE F342/INSTR F342
+L: 1
+T: 0
+P: 1
+
+
+Course Name: COMMUNICATION NETWORKS
+Course ID: ECE F343
+L: 1
+T: 1
+P: 0
+
+
+Course Name: INFORMATION THEORY & CODING
+Course ID: ECE F344
+L: 1
+T: 1
+P: 0
+
+
+Course Name: FPGA BASED SYSTEM DESIGN LABORATORY
+Course ID: EEE F348
+L: 0
+T: 0
+P: 1
+
+
+Course Name: LABORATORY PROJECT
+Course ID: EEE F366/ECE F366/INSTR F366
+L: 0
+T: 0
+P: 0
+
+
+Course Name: LABORATORY PROJECT
+Course ID: EEE F367/ECE F367/INSTR F367
+L: 0
+T: 0
+P: 0
+
+
+Course Name: DESIGN PROJECT
+Course ID: EEE F376/ECE F376/INSTR F376
+L: 0
+T: 0
+P: 0
+
+
+Course Name: DESIGN PROJECT
+Course ID: EEE F377/ECE F377/INSTR F377
+L: 0
+T: 0
+P: 0
+
+
+Course Name: DIGITAL COMMUNICATION
+Course ID: EEE F416/ECE F416
+L: 1
+T: 0
+P: 0
+
+
+Course Name: MODERN CONTROL SYSTEMS
+Course ID: EEE F422
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ENERGY STORAGE SYSTEMS
+Course ID: EEE F428
+L: 1
+T: 0
+P: 0
+
+
+Course Name: MOBILE TELECOMMUNICATION NETWORKS
+Course ID: EEE F431/EEE F431
+L: 1
+T: 0
+P: 0
+
+
+Course Name: MEDICAL INSTRUMENTATION
+Course ID: EEE F432/INSTR F432
+L: 1
+T: 0
+P: 0
+
+
+Course Name: DIGITAL SIGNAL PROCESSING
+Course ID: EEE F434/ECE F434
+L: 1
+T: 0
+P: 1
+
+
+Course Name: DIGITAL IMAGE PROCESSING
+Course ID: EEE F435
+L: 1
+T: 0
+P: 0
+
+
+Course Name: INTERNET OF THINGS
+Course ID: EEE F411
+L: 1
+T: 0
+P: 0
+
+
+Course Name: WIND ELECTRICAL SYSTEM
+Course ID: EEE F473/INSTR F473/ME F483
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ANTENNA THEORY AND DESIGN
+Course ID: EEE F474
+L: 1
+T: 0
+P: 0
+
+
+Course Name: SPECIAL PROJECT
+Course ID: EEE F491/INSTR F491/ECE F491
+L: 0
+T: 0
+P: 0
+
+
+Course Name: RF MICROELECTRONICS
+Course ID: EEE G510
+L: 1
+T: 0
+P: 0
+
+
+Course Name: EMBEDDED SYSTEM DESIGN
+Course ID: EEE G512
+L: 1
+T: 0
+P: 1
+
+
+Course Name: MACHINE LEARNING FOR ELECTRONICS ENGINEERS
+Course ID: EEE G513
+L: 1
+T: 0
+P: 0
+
+
+Course Name: RF AND MICROWAVE ENGG
+Course ID: EEE G581
+L: 1
+T: 0
+P: 0
+
+
+Course Name: Telecom Network management
+Course ID: EEE G582
+L: 1
+T: 0
+P: 1
+
+
+Course Name: OPTICAL COMMUNICATION
+Course ID: EEE G591
+L: 1
+T: 0
+P: 0
+
+
+Course Name: MOBILE AND PERSONAL COMMUNICATION
+Course ID: EEE G592
+L: 1
+T: 0
+P: 0
+
+
+Course Name: CODING THEORY AND PRACTICE
+Course ID: EEE G612
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ADVANCED DIGITAL SIGNAL PROCESSING
+Course ID: EEE G613
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ADVANCED WIRELESS COMMUNICATIONS
+Course ID: EEE G614
+L: 1
+T: 0
+P: 1
+
+
+Course Name: ADVANCED DIGITAL COMMUNICATION
+Course ID: EEE G622
+L: 1
+T: 0
+P: 0
+
+
+Course Name: HARDWARE SOFTWARE CODESIGN
+Course ID: EEE G626
+L: 1
+T: 0
+P: 1
+
+
+Course Name: NETWORKED EMBEDDED APPLICATIONS
+Course ID: EEE G627
+L: 1
+T: 0
+P: 0
+
+
+Course Name: FINANCIAL RISK ANALYTICS AND MANAGEMENT
+Course ID: FIN F414
+L: 1
+T: 0
+P: 0
+
+
+Course Name: MODERN POLITICAL CONCEPTS
+Course ID: GS F211
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ENVIRON DEV & CLIMATE CH
+Course ID: GS F212
+L: 1
+T: 0
+P: 0
+
+
+Course Name: DEVELOPMENT THEORIES
+Course ID: GS F213
+L: 1
+T: 0
+P: 0
+
+
+Course Name: BUSINESS COMMUNICATION
+Course ID: GS F221
+L: 1
+T: 0
+P: 0
+
+
+Course Name: DYNAMICS OF SOCIAL CHANGE
+Course ID: GS F231
+L: 1
+T: 0
+P: 0
+
+
+Course Name: INTRODUCTORY PSYCHOLOGY
+Course ID: GS F232
+L: 1
+T: 0
+P: 0
+
+
+Course Name: PUBLIC POLICY
+Course ID: GS F233
+L: 1
+T: 0
+P: 0
+
+
+Course Name: DEVELOPMENT ECONOMICS
+Course ID: GS F234
+L: 1
+T: 0
+P: 0
+
+
+Course Name: CREATIVE WRITING
+Course ID: GS F241
+L: 1
+T: 0
+P: 0
+
+
+Course Name: CULTURAL STUDIES
+Course ID: GS F242
+L: 1
+T: 0
+P: 0
+
+
+Course Name: EFFECTIVE PUBLIC SPEAKING
+Course ID: GS F245
+L: 1
+T: 0
+P: 0
+
+
+Course Name: INTRODUCTION TO CONFLICT MANAGEMENT
+Course ID: GS F311
+L: 1
+T: 0
+P: 0
+
+
+Course Name: CRITICAL ANALYSIS OF LITERATURE AND CINEMA
+Course ID: GS F322
+L: 1
+T: 0
+P: 0
+
+
+Course Name: TECH IN SOCIAL RESEARCH
+Course ID: GS F331
+L: 1
+T: 0
+P: 0
+
+
+Course Name: INTRODUCTORY PHILOSOPHY
+Course ID: HSS F235
+L: 1
+T: 0
+P: 0
+
+
+Course Name: CONTEMPORARY INDIAN ENGLISH FICTION
+Course ID: HSS F237
+L: 1
+T: 0
+P: 0
+
+
+Course Name: STUDY PROJECT
+Course ID: HSS F266
+L: 0
+T: 0
+P: 0
+
+
+Course Name: INTRODUCTION TO CONTEMPORARY ARTS
+Course ID: HSS F313
+L: 1
+T: 0
+P: 0
+
+
+Course Name: MARITIME STUDIES AND BLUE ECONOMY
+Course ID: HSS F314
+L: 1
+T: 0
+P: 0
+
+
+Course Name: INTRODUCTION TO GLOBALIZATION
+Course ID: HSS F317
+L: 1
+T: 0
+P: 0
+
+
+Course Name: INTRODUCTION TO ANTHROPOLOGY
+Course ID: HSS F318
+L: 1
+T: 0
+P: 0
+
+
+Course Name: APPRECIATION OF ART
+Course ID: HSS F330
+L: 1
+T: 0
+P: 0
+
+
+Course Name: CINEMATIC ART
+Course ID: HSS F332
+L: 1
+T: 0
+P: 0
+
+
+Course Name: SRIMAD BHAGAVAD GITA
+Course ID: HSS F334
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ENGLISH LITERARY FORMS AND MOVEMENTS
+Course ID: HSS F337
+L: 1
+T: 0
+P: 0
+
+
+Course Name: COMPARATIVE INDIAN LITERATURE
+Course ID: HSS F338
+L: 1
+T: 0
+P: 0
+
+
+Course Name: THEATRE ART ACTING AND PRODUCTION
+Course ID: HSS F339
+L: 1
+T: 0
+P: 0
+
+
+Course Name: PROFESSIONAL ETHICS
+Course ID: HSS F343
+L: 1
+T: 0
+P: 0
+
+
+Course Name: INTERNATIONAL RELATIONS
+Course ID: HSS F346
+L: 1
+T: 0
+P: 0
+
+
+Course Name: INTRODUCTION TO CARNATIC MUSIC
+Course ID: HSS F347
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ECOCRITICISM
+Course ID: HSS F349
+L: 1
+T: 0
+P: 0
+
+
+Course Name: LOCAL GOVERNANCE AND PARTICIPATION
+Course ID: HSS F362
+L: 1
+T: 0
+P: 0
+
+
+Course Name: DISASTER AND DEVELOPMENT
+Course ID: HSS F363
+L: 1
+T: 0
+P: 0
+
+
+Course Name: SCIENCE OF SUSTAINABLE HAPPINESS
+Course ID: HSS F365
+L: 1
+T: 0
+P: 0
+
+
+Course Name: CASTE AND GENDER IN INDIA
+Course ID: HSS F369
+L: 1
+T: 0
+P: 0
+
+
+Course Name: CITIES-LIFE, ISSUES AND CONFLICTS
+Course ID: HSS F371
+L: 1
+T: 0
+P: 0
+
+
+Course Name: INTRODUCTION TO SOCIAL PSYCHOLOGY
+Course ID: HSS F372
+L: 1
+T: 0
+P: 0
+
+
+Course Name: SHAKESPEARE AND POPULAR CULTURE
+Course ID: HSS F373
+L: 1
+T: 0
+P: 0
+
+
+Course Name: INTRODUCTION TO PHILOSOPHY OF SCIENCE
+Course ID: HSS F379
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ENVIRONMENTAL SUSTAINABILITY VENTURES
+Course ID: HSS F381
+L: 1
+T: 0
+P: 0
+
+
+Course Name: INTRODUCTION TO MUSEUM STUDIES
+Course ID: HSS F383
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ELECTRO INST &INST TECH
+Course ID: INSTR F311
+L: 1
+T: 0
+P: 2
+
+
+Course Name: TRANSD & MEASUREMENT SYS
+Course ID: INSTR F312
+L: 1
+T: 1
+P: 0
+
+
+Course Name: INDUS INSTRUMENT & CONT
+Course ID: INSTR F343
+L: 1
+T: 1
+P: 0
+
+
+Course Name: DATA MINING
+Course ID: ISZ C415
+L: 1
+T: 0
+P: 0
+
+
+Course Name: MACHINE LEARNING
+Course ID: ISZ C464
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ENVIRONMENTAL DEVELOPMENT AND CLIMATE CHANGE
+Course ID: GS F212
+L: 1
+T: 0
+P: 0
+
+
+Course Name: MICROPROC & INTERFACING
+Course ID: INSTR F241
+L: 1
+T: 1
+P: 1
+
+
+Course Name: Computer Graphics 
+Course ID: IS F311
+L: 1
+T: 0
+P: 0
+
+
+Course Name: SOFTWARE ENGINEERING
+Course ID: IS F341
+L: 1
+T: 0
+P: 0
+
+
+Course Name: NETWORK PROGRAMMING
+Course ID: IS F462
+L: 1
+T: 0
+P: 0
+
+
+Course Name: COMPUTER ORGANIZATION AND ARCHITECTURE
+Course ID: ISZ C353
+L: 1
+T: 0
+P: 0
+
+
+Course Name: MATHEMATICS I
+Course ID: MATH F111
+L: 1
+T: 0
+P: 0
+
+
+Course Name: MATHEMATICS II
+Course ID: MATH F112
+L: 1
+T: 0
+P: 0
+
+
+Course Name: PROBABILITY AND STATISTICS
+Course ID: MATH F113
+L: 1
+T: 0
+P: 0
+
+
+Course Name: MATHEMATICS III
+Course ID: MATH F211
+L: 2
+T: 0
+P: 0
+
+
+Course Name: DISCREET MATHEMATICS
+Course ID: MATH F213
+L: 1
+T: 1
+P: 0
+
+
+Course Name: ELEMENTARY REAL ANALYSIS
+Course ID: MATH F214
+L: 1
+T: 1
+P: 0
+
+
+Course Name: ALGEBRA I
+Course ID: MATH F215
+L: 1
+T: 1
+P: 0
+
+
+Course Name: MATHEMATICAL METHODS
+Course ID: MATH F241
+L: 1
+T: 1
+P: 0
+
+
+Course Name: OPERATIONS RESEARCH
+Course ID: MATH F242
+L: 1
+T: 1
+P: 0
+
+
+Course Name: GRAPHS AND NETWORKS
+Course ID: MATH F243
+L: 1
+T: 1
+P: 0
+
+
+Course Name: MEASURE & INTEGRATION
+Course ID: MATH F244
+L: 1
+T: 1
+P: 0
+
+
+Course Name: STUDY PROJECT
+Course ID: MATH F266
+L: 0
+T: 0
+P: 0
+
+
+Course Name: INTRODUCTION TO TOPOLOGY
+Course ID: MATH F311
+L: 1
+T: 1
+P: 0
+
+
+Course Name: ORDINARY DIFFERENTIAL EQUATIONS
+Course ID: MATH F312
+L: 1
+T: 1
+P: 0
+
+
+Course Name: NUMERICAL ANALYSIS
+Course ID: MATH F313
+L: 1
+T: 0
+P: 0
+
+
+Course Name: INTRODUCTION TO STATISTICAL INFERENCE
+Course ID: MATH F315
+L: 1
+T: 0
+P: 0
+
+
+Course Name: INTRO TO FUNCTIONAL ANAL
+Course ID: MATH F341
+L: 1
+T: 1
+P: 0
+
+
+Course Name: DIFFERENTIAL GEOMETRY
+Course ID: MATH F342
+L: 1
+T: 1
+P: 0
+
+
+Course Name: PARTIAL DIFF EQUATIONS
+Course ID: MATH F343
+L: 1
+T: 1
+P: 0
+
+
+Course Name: LABORATORY PROJECT
+Course ID: MATH F366/MATH F367
+L: 0
+T: 0
+P: 0
+
+
+Course Name: DESIGN PROJECT
+Course ID: MATH F376/MATH F377
+L: 0
+T: 0
+P: 0
+
+
+Course Name: MATHEMATICAL MODELING
+Course ID: MATH F420
+L: 1
+T: 0
+P: 0
+
+
+Course Name: TIME SERIES ANALYSIS AND FORECASTING
+Course ID: MATH F428
+L: 1
+T: 0
+P: 1
+
+
+Course Name: NUMERICAL SOLUTIONS OF ORDINARY DIFFERENTIAL EQUATIONS
+Course ID: MATH F444
+L: 1
+T: 0
+P: 0
+
+
+Course Name: TOPICS IN ALGEBRA
+Course ID: MATH G513
+L: 1
+T: 0
+P: 0
+
+
+Course Name: TOPICS IN ANALYSIS
+Course ID: MATH G514
+L: 1
+T: 0
+P: 0
+
+
+Course Name: TOPICS IN DIFFERENTIAL EQUATIONS
+Course ID: MATH G515
+L: 1
+T: 0
+P: 0
+
+
+Course Name: TOPICS IN TOPOLOGY
+Course ID: MATH G516
+L: 1
+T: 0
+P: 0
+
+
+Course Name: DISCRETE STR FOR COMP SCIENCE
+Course ID: MATH ZC222
+L: 1
+T: 0
+P: 0
+
+
+Course Name: CALCULUS
+Course ID: MATH ZC233/PE ZC233/POWAB ZC235
+L: 1
+T: 0
+P: 0
+
+
+Course Name: LINEAR ALGEBRA & OPTIMIZATION
+Course ID: MATH ZC234/PE ZC235
+L: 1
+T: 0
+P: 0
+
+
+Course Name: OPTIMIZATION/ ENGINEERING OPTIMIZATION
+Course ID: MATH F212/ME F320
+L: 3
+T: 0
+P: 0
+
+
+Course Name: Number Theory
+Course ID: MATH F231
+L: 1
+T: 0
+P: 0
+
+
+Course Name: STATISTICAL INFERENCE AND APPLICATIONS
+Course ID: MATH F353
+L: 3
+T: 0
+P: 0
+
+
+Course Name: Combinatorial Mathematics 
+Course ID: MATH F421
+L: 1
+T: 0
+P: 0
+
+
+Course Name: APPLIED STOCHASTIC PROCESSES
+Course ID: MATH F424
+L: 3
+T: 0
+P: 1
+
+
+Course Name: APPLIED STATISTICAL METHODS
+Course ID: MATH F432
+L: 1
+T: 0
+P: 0
+
+
+Course Name: Discrete Mathematical Structures
+Course ID: MATH F441
+L: 1
+T: 0
+P: 0
+
+
+Course Name: NONLINEAR OPTIMIZATION
+Course ID: MATH F471
+L: 3
+T: 0
+P: 0
+
+
+Course Name: BIOSTATISTICS  AND COMPUTERS IN PUBLIC HEALTH
+Course ID: MPH G510
+L: 1
+T: 0
+P: 0
+
+
+Course Name: WORKSHOP PRACTICE
+Course ID: ME F112
+L: 2
+T: 0
+P: 0
+
+
+
+
+Course Name: MECHANICS OF SOLIDS
+Course ID: ME F211
+L: 1
+T: 1
+P: 0
+
+
+Course Name: FLUID MECHANICS
+Course ID: ME F212
+L: 1
+T: 1
+P: 0
+
+
+Course Name: MATERIALS SCIENCE & ENGINEERING
+Course ID: ME F216
+L: 1
+T: 1
+P: 2
+
+
+Course Name: APPLIED THERMODYNAMICS
+Course ID: ME F217
+L: 1
+T: 1
+P: 2
+
+
+Course Name: ADVANCED MECHANICS OF SOLIDS
+Course ID: ME F218
+L: 1
+T: 1
+P: 0
+
+
+Course Name: MANUFACTURING PROCESSES/PRODUCTION TECHNIQUES I
+Course ID: ME F219/ME F243
+L: 1
+T: 0
+P: 2
+
+
+Course Name: HEAT TRANSFER
+Course ID: ME F220
+L: 1
+T: 1
+P: 2
+
+
+Course Name: MECHANISMS AND MACHINES
+Course ID: ME F221
+L: 1
+T: 1
+P: 0
+
+
+Course Name: STUDY PROJECT
+Course ID: ME F266
+L: 0
+T: 0
+P: 0
+
+
+Course Name: DESIGN OF MACHINE ELEMENTS/MACHINE DESIGN AND DRAWING
+Course ID: ME F314/ME F241
+L: 1
+T: 1
+P: 0
+
+
+Course Name: ADVANCED MANUFACTURING PROCESSES
+Course ID: ME F315
+L: 1
+T: 1
+P: 2
+
+
+Course Name: MANUFACTURING MANAGEMENT
+Course ID: ME F316
+L: 1
+T: 1
+P: 0
+
+
+Course Name: ENGINES, MOTORS, AND MOBILITY/I C ENGINES
+Course ID: ME F317/ME F242
+L: 1
+T: 1
+P: 0
+
+
+Course Name: COMPUTER-AIDED DESIGN
+Course ID: ME F318/ME F342
+L: 1
+T: 1
+P: 2
+
+
+Course Name: VIBRATIONS & CONTROL/MECHANICAL VIBRATIONS
+Course ID: ME F319/ME F343
+L: 1
+T: 1
+P: 0
+
+
+Course Name: ENGINEERING OPTIMIZATION
+Course ID: ME F320/ME F344
+L: 1
+T: 1
+P: 0
+
+
+Course Name: PRIMEMOVERS & FLUID MACH
+Course ID: ME F341
+L: 1
+T: 0
+P: 2
+
+
+Course Name: LABORATORY PROJECT
+Course ID: ME F366/ME F367
+L: 0
+T: 0
+P: 0
+
+
+Course Name: DESIGN PROJECT
+Course ID: ME F376/ME F377
+L: 0
+T: 0
+P: 0
+
+
+Course Name: GAS DYNAMICS
+Course ID: ME F415
+L: 1
+T: 0
+P: 0
+
+
+Course Name: POWER PLANT ENGINEERING
+Course ID: ME F420
+L: 1
+T: 0
+P: 0
+
+
+Course Name: MICRO-FLUIDICS & ITS APP
+Course ID: ME F423
+L: 1
+T: 0
+P: 0
+
+
+Course Name: SMART MATERIALS
+Course ID: ME F428
+L: 1
+T: 0
+P: 0
+
+
+Course Name: QUALITY CONTROL, ASSURANCE AND RELIABILITY
+Course ID: ME F443
+L: 1
+T: 0
+P: 0
+
+
+Course Name: MECHANICAL EQUIPMENT DESIGN
+Course ID: ME F451
+L: 1
+T: 0
+P: 0
+
+
+Course Name: COMPOSITE MATERIALS & DESIGN
+Course ID: ME F452
+L: 1
+T: 0
+P: 0
+
+
+Course Name: REFRIGERATION AND AIR CONDITIONING
+Course ID: ME F461
+L: 1
+T: 0
+P: 0
+
+
+Course Name: WIND ELECTRICAL SYSTEM
+Course ID: ME F483
+L: 1
+T: 0
+P: 0
+
+
+Course Name: NUMERICAL TECHNIQUES FOR FLUID FLOW AND HEAT TRANSFER
+Course ID: ME F485
+L: 1
+T: 0
+P: 0
+
+
+Course Name: SPECIAL PROJECTS
+Course ID: ME F491
+L: 0
+T: 0
+P: 0
+
+
+Course Name: MECHANISMS & ROBOTICS
+Course ID: ME G511
+L: 1
+T: 0
+P: 0
+
+
+Course Name: FINITE ELEMENT METHODS
+Course ID: ME G512
+L: 1
+T: 0
+P: 0
+
+
+Course Name: COMPUT FLUID DYNAMICS
+Course ID: ME G515
+L: 1
+T: 0
+P: 0
+
+
+Course Name: MACHINE TOOL ENGINEERING
+Course ID: ME G532
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ADVANCED ENGINEERING MATHEMATICS
+Course ID: ME G535
+L: 1
+T: 0
+P: 0
+
+
+Course Name: COMP AIDED ANALYSIS AND DESIGN
+Course ID: ME G611
+L: 1
+T: 0
+P: 0
+
+
+Course Name: THEORY OF ELASTICITY AND PLASTICITY
+Course ID: ME G641
+L: 1
+T: 0
+P: 0
+
+
+Course Name: I C FABRICATION TECH
+Course ID: MEL G611
+L: 1
+T: 0
+P: 0
+
+
+Course Name: VLSI DESIGN
+Course ID: MEL G621
+L: 1
+T: 0
+P: 0
+
+
+Course Name: INTRO TO ARTIF NEURAL NET
+Course ID: MEL G622
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ADVANCED VLSI DESIGN
+Course ID: MEL G623
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ADVANCED VLSI ARCHITECTURES
+Course ID: MEL G624
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ADVANCED ANALOG AND MIXED SIGNAL DESIGN
+Course ID: MEL G625
+L: 1
+T: 0
+P: 0
+
+
+Course Name: VLSI TEST AND TESTABILITY
+Course ID: MEL G626
+L: 1
+T: 0
+P: 0
+
+
+Course Name: PHY & MO OF MICROEL DEV
+Course ID: MEL G631
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ANALOG IC DESIGN
+Course ID: MEL G632
+L: 1
+T: 0
+P: 0
+
+
+Course Name: CAD FOR IC DESIGN
+Course ID: MEL G641
+L: 1
+T: 0
+P: 0
+
+
+Course Name: VLSI ARCHITECTURES
+Course ID: MEL G642
+L: 1
+T: 0
+P: 0
+
+
+Course Name: SUPPLY CHAIN MANAGEMENT
+Course ID: MF F319
+L: 1
+T: 0
+P: 0
+
+
+Course Name: SUPPLY CHAIN MODELLING AND EMPIRICAL ANALYSIS
+Course ID: MF F422
+L: 1
+T: 0
+P: 0
+
+
+Course Name: PRINCIPLES OF MANAGEMENT
+Course ID: MGTS F211
+L: 1
+T: 1
+P: 0
+
+
+Course Name: CHEMICAL ENGG THERMODYNAMICS
+Course ID: PE ZC313
+L: 1
+T: 0
+P: 0
+
+
+Course Name: CHEMICAL PROCESS CALCULATIONS
+Course ID: PE ZC321
+L: 1
+T: 0
+P: 0
+
+
+Course Name: PROCESS CONTROL & INSTRUMENTATION
+Course ID: PE* ZC453
+L: 1
+T: 0
+P: 0
+
+
+Course Name: PHYSICS LABORATORY
+Course ID: PHY F110
+L: 0
+T: 0
+P: 1
+
+
+Course Name: MECHANICS OSCILLATIONS &WAVES
+Course ID: PHY F111
+L: 1
+T: 0
+P: 0
+
+
+Course Name: CLASSICAL MECHANICS
+Course ID: PHY F211
+L: 1
+T: 1
+P: 0
+
+
+Course Name: ELECTROMAGNETIC THEO I
+Course ID: PHY F212
+L: 1
+T: 2
+P: 0
+
+
+Course Name: OPTICS
+Course ID: PHY F213
+L: 1
+T: 1
+P: 0
+
+
+Course Name: ELEC, MAGNET & OPTICS LAB
+Course ID: PHY F214
+L: 0
+T: 0
+P: 1
+
+
+Course Name: INTRODUCTION TO ASTRONOMY &ASTROPHYSICS
+Course ID: PHY F215
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ELECTROMAGNETIC THEO II
+Course ID: PHY F241
+L: 1
+T: 1
+P: 0
+
+
+Course Name: QUANTUM MECHANICS I
+Course ID: PHY F242
+L: 1
+T: 1
+P: 0
+
+
+Course Name: MATHE METHODS OF PHY
+Course ID: PHY F243
+L: 1
+T: 1
+P: 0
+
+
+Course Name: MODERN PHY LAB
+Course ID: PHY F244
+L: 0
+T: 0
+P: 1
+
+
+Course Name: STUDY PROJECT
+Course ID: PHY F266
+L: 0
+T: 0
+P: 0
+
+
+Course Name: QUANTUM MECHANICS II
+Course ID: PHY F311
+L: 1
+T: 1
+P: 0
+
+
+Course Name: STATISTICAL MECHANICS
+Course ID: PHY F312
+L: 1
+T: 1
+P: 0
+
+
+Course Name: COMPUTATIONAL PHYSICS
+Course ID: PHY F313
+L: 1
+T: 1
+P: 0
+
+
+Course Name: THEORY OF RELATIVITY
+Course ID: PHY F315
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ATOMS AND PHOTONS
+Course ID: PHY F318
+L: 1
+T: 0
+P: 0
+
+
+Course Name: SOLID STATE PHYSICS
+Course ID: PHY F341
+L: 1
+T: 1
+P: 0
+
+
+Course Name: ATOMIC & MOLECULAR PHY
+Course ID: PHY F342
+L: 1
+T: 1
+P: 0
+
+
+Course Name: NUCLEAR & PARTICLE PHY
+Course ID: PHY F343
+L: 1
+T: 1
+P: 0
+
+
+Course Name: ADVANCED PHYSICS LAB
+Course ID: PHY F344
+L: 0
+T: 0
+P: 1
+
+
+Course Name: QUANTUM MECHANICS FOR ENGINEERS
+Course ID: PHY F345
+L: 1
+T: 0
+P: 0
+
+
+Course Name: LASER SCIENCE AND TECHNOLOGY
+Course ID: PHY F346
+L: 1
+T: 0
+P: 0
+
+
+Course Name: LABORATORY PROJECT
+Course ID: PHY F366/PHY F367
+L: 0
+T: 0
+P: 0
+
+
+Course Name: DESIGN PROJECT
+Course ID: PHY F376/PHY F377
+L: 0
+T: 0
+P: 0
+
+
+Course Name: INTRODUCTION TO QUANTUM FIELD THEORY
+Course ID: PHY F412
+L: 1
+T: 0
+P: 0
+
+
+Course Name: PARTICLE PHYSICS
+Course ID: PHY F413
+L: 1
+T: 0
+P: 0
+
+
+Course Name: GENERAL THEORY OF RELATIVITY ANDCOSMOLOGY
+Course ID: PHY F415
+L: 1
+T: 0
+P: 0
+
+
+Course Name: SOFT CONDENSED MATTER PHYSICS
+Course ID: PHY F416
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ADVANCED SOLID STATE PHYSICS
+Course ID: PHY F419
+L: 1
+T: 0
+P: 0
+
+
+Course Name: SPECIAL TOPICS IN STATISTICAL MECHANICS
+Course ID: PHY F423
+L: 1
+T: 0
+P: 0
+
+
+Course Name: PHYSICS OF SEMICONDUCTOR DEVICES
+Course ID: PHY F426
+L: 1
+T: 0
+P: 0
+
+
+Course Name: QUANTUM INFORMATION THEORY
+Course ID: PHY F428
+L: 1
+T: 0
+P: 0
+
+
+Course Name: TOPICS IN NONLINEAR OPTICS
+Course ID: PHY F433
+L: 1
+T: 0
+P: 0
+
+
+Course Name: SPECIAL PROJECT
+Course ID: PHY F491
+L: 0
+T: 0
+P: 0
+
+
+Course Name: CLASSICAL ELECTRODYNAMIC
+Course ID: PHY G513
+L: 1
+T: 1
+P: 0
+
+
+Course Name: QUANTUM THEORY AND APPLICATIONS
+Course ID: PHY G514
+L: 1
+T: 0
+P: 0
+
+
+Course Name: STATISTICAL PHYSICS & APPLICATIONS
+Course ID: PHY G516
+L: 1
+T: 0
+P: 0
+
+
+Course Name: BUSINESS COMMUNICATION
+Course ID: PS* ZC221
+L: 1
+T: 0
+P: 0
+
+
+Course Name: DESIGN OF EXPERIMENTS
+Course ID: QM ZG536
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ARTIFICIAL AND COMPUTATIONAL INTELLIGENCE
+Course ID: SE ZG557
+L: 1
+T: 0
+P: 0
+
+
+Course Name: APPLIED MACHINE LEARNING
+Course ID: SE ZG568/SS ZG568
+L: 1
+T: 0
+P: 0
+
+
+Course Name: NATURAL LANGUAGE PROCESSING
+Course ID: SS ZG599
+L: 1
+T: 0
+P: 0
+
+
+Course Name: SANITATION GOVERNANCE BEHAVIORAL CHANGE AND ADVOCACY
+Course ID: SSTM* ZG513
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ARTIFICIAL AND COMPUTATIONAL INTELLIGENCE
+Course ID: SEZG557
+L: 1
+T: 0
+P: 0
+
+
+Course Name: APPLIED MACHINE LEARNING
+Course ID: SEZ G568/SSZG568
+L: 1
+T: 0
+P: 0
+
+
+Course Name: Data Ware Housing
+Course ID: SS G515
+L: 1
+T: 0
+P: 0
+
+
+Course Name: Software Testing Methodologies
+Course ID: SS G552
+L: 1
+T: 0
+P: 0
+
+
+Course Name: Software Engineering and Management
+Course ID: SSG 562
+L: 1
+T: 0
+P: 0
+
+
+Course Name: SOFTWARE ARCHITECHTURES
+Course ID: SSG 653
+L: 1
+T: 0
+P: 0
+
+
+Course Name: ADVANCED STATISTICAL TECHNIQUES FOR ANALYTICS 
+Course ID: SSZ G536
+L: 1
+T: 0
+P: 0
+
+
+Course Name: NATURAL LANGUAGE PROCESSING
+Course ID: SSZ G599
+L: 1
+T: 0
+P: 0
+
+
+Course Name: TECHNICAL REPORT WRITING
+Course ID: TA ZC312/PE ZC312
+L: 1
+T: 0
+P: 0
