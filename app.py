@@ -16,7 +16,7 @@ SCOPES = Config.SECRET_KEY
 SPREADSHEET_ID = Config.SPREADSHEET_ID
 SHEET_NAME = Config.SHEET_NAME
 
-# Starting column (B corresponds to index 2)
+# Starting column (C corresponds to index 3)
 column_counter = 3
 
 # Parse course details from the text file
