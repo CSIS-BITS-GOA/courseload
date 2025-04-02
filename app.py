@@ -4,16 +4,17 @@ from google.oauth2.service_account import Credentials
 import os
 import time
 import re
+from config import Config
 
 app = Flask(__name__)
-app.secret_key = os.urandom(24)
+app.config.from_object(Config)
 
 # Define Google Sheets API scope
-SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
+SCOPES = Config.SECRET_KEY
 
 # Spreadsheet ID and sheet name
-SPREADSHEET_ID = '1lXvk0dmhF49cb0o_9gqiigD-re6Vgh-vS5YVWSl8b4g'
-SHEET_NAME = 'Workload_Automatic'
+SPREADSHEET_ID = Config.SPREADSHEET_ID
+SHEET_NAME = Config.SHEET_NAME
 
 # Starting column (B corresponds to index 2)
 column_counter = 3
