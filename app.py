@@ -55,7 +55,10 @@ all_courses = parse_course_details()
 
 def verify_google_sheets_access():
     try:
-        creds = Credentials.from_service_account_file('credentials.json', scopes=SCOPES)
+        # Use environment variable for credentials path
+        creds_path = os.getenv('GOOGLE_CREDS_PATH', 'credentials.json')
+        
+        creds = Credentials.from_service_account_file(creds_path, scopes=Config.SCOPES)
         service = build('sheets', 'v4', credentials=creds)
         
         # Test reading a cell
@@ -73,14 +76,20 @@ def verify_google_sheets_access():
         print(f"Error message: {str(e)}")
         return False
 
-# Authenticate with Google Sheets API
 def authenticate_google_sheets():
     try:
-        creds = Credentials.from_service_account_file('credentials.json', scopes=SCOPES)
+        # Use environment variable for credentials path
+        creds_path = os.getenv('GOOGLE_CREDS_PATH', 'credentials.json')
+        
+        # Verify credentials file exists
+        if not os.path.exists(creds_path):
+            raise FileNotFoundError(f"Google credentials file not found at {creds_path}")
+            
+        creds = Credentials.from_service_account_file(creds_path, scopes=Config.SCOPES)
         service = build('sheets', 'v4', credentials=creds)
         return service
     except Exception as e:
-        print(f"Error authenticating: {e}")
+        app.logger.error(f"Error authenticating with Google Sheets: {str(e)}")
         return None
 
 # Convert column index to letter (e.g., 2 -> B, 27 -> AA)
