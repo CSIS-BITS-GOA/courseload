@@ -1,64 +1,71 @@
-from flask import Flask, request, render_template_string, send_from_directory, redirect, url_for, session, jsonify
+from flask import Flask, request, render_template_string, send_from_directory, redirect, url_for, session
 from googleapiclient.discovery import build
 from google.oauth2.service_account import Credentials
 import os
 import time
 import re
-from config import Config
 
 app = Flask(__name__)
-app.config.from_object(Config)
+app.secret_key = os.urandom(24)
 
 # Define Google Sheets API scope
-SCOPES = Config.SECRET_KEY
+SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 
 # Spreadsheet ID and sheet name
-SPREADSHEET_ID = Config.SPREADSHEET_ID
-SHEET_NAME = Config.SHEET_NAME
+SPREADSHEET_ID = '1lXvk0dmhF49cb0o_9gqiigD-re6Vgh-vS5YVWSl8b4g'
+SHEET_NAME = 'Workload_Automatic'
 
-# Starting column (C corresponds to index 3)
+# Starting column (B corresponds to index 2)
 column_counter = 3
 
-# Parse course details from the text file
-def parse_course_details():
-    courses = []
-    with open('Course details.txt', 'r', encoding='utf-8-sig') as file:
-        content = file.read()
-    
-    # Split by double newlines to separate each course
-    course_blocks = re.split(r'\n\s*\n', content.strip())
-    
-    for block in course_blocks:
-        lines = [line.strip() for line in block.split('\n') if line.strip()]
-        if len(lines) >= 3:
-            course = {}
-            course['name'] = lines[0].replace('Course Name: ', '')
-            course['id'] = lines[1].replace('Course ID: ', '')
-            
-            # Parse L, T, P values
-            for line in lines[2:]:
-                if line.startswith('L:'):
-                    course['L'] = line.split(':')[1].strip()
-                elif line.startswith('T:'):
-                    course['T'] = line.split(':')[1].strip()
-                elif line.startswith('P:'):
-                    course['P'] = line.split(':')[1].strip()
-            
-            # Ensure all fields are present
-            if 'L' in course and 'T' in course and 'P' in course:
-                courses.append(course)
-    
-    return courses
+filename = 'Course details.txt'
 
-# Get all courses
-all_courses = parse_course_details()
+def parse_courses_file(filename):
+    courses = []
+    current_course = {}
+    
+    try:
+        with open(filename, 'r') as file:
+            for line in file:
+                line = line.strip()
+                if line.startswith("Course Name:"):
+                    current_course['name'] = line.split(":", 1)[1].strip()
+                elif line.startswith("Course ID:"):
+                    current_course['id'] = line.split(":", 1)[1].strip()
+                elif line.startswith("L:"):
+                    current_course['lecture'] = line.split(":", 1)[1].strip()
+                elif line.startswith("T:"):
+                    current_course['tutorial'] = line.split(":", 1)[1].strip()
+                elif line.startswith("P:"):
+                    current_course['practical'] = line.split(":", 1)[1].strip()
+                elif line == "" and current_course:
+                    # Only add the course if we have all required fields
+                    if all(key in current_course for key in ['name', 'id', 'lecture', 'tutorial', 'practical']):
+                        courses.append(current_course)
+                    current_course = {}
+        
+        # Add the last course if file doesn't end with empty line
+        if current_course and all(key in current_course for key in ['name', 'id', 'lecture', 'tutorial', 'practical']):
+            courses.append(current_course)
+            
+        # Sort courses by name, handling cases where name might be missing
+        return sorted(courses, key=lambda x: x.get('name', ''))
+    
+    except FileNotFoundError:
+        print(f"Error: Course file '{filename}' not found.")
+        return []
+    except Exception as e:
+        print(f"Error parsing course file: {str(e)}")
+        return []
+
+# Load courses at startup
+all_courses = parse_courses_file('Course details.txt')
+if not all_courses:
+    print("Warning: No courses were loaded. Check the course file format.")
 
 def verify_google_sheets_access():
     try:
-        # Use environment variable for credentials path
-        creds_path = os.getenv('GOOGLE_CREDS_PATH', 'credentials.json')
-        
-        creds = Credentials.from_service_account_file(creds_path, scopes=Config.SCOPES)
+        creds = Credentials.from_service_account_file('credentials.json', scopes=SCOPES)
         service = build('sheets', 'v4', credentials=creds)
         
         # Test reading a cell
@@ -76,20 +83,14 @@ def verify_google_sheets_access():
         print(f"Error message: {str(e)}")
         return False
 
+# Authenticate with Google Sheets API
 def authenticate_google_sheets():
     try:
-        # Use environment variable for credentials path
-        creds_path = os.getenv('GOOGLE_CREDS_PATH', 'credentials.json')
-        
-        # Verify credentials file exists
-        if not os.path.exists(creds_path):
-            raise FileNotFoundError(f"Google credentials file not found at {creds_path}")
-            
-        creds = Credentials.from_service_account_file(creds_path, scopes=Config.SCOPES)
+        creds = Credentials.from_service_account_file('credentials.json', scopes=SCOPES)
         service = build('sheets', 'v4', credentials=creds)
         return service
     except Exception as e:
-        app.logger.error(f"Error authenticating with Google Sheets: {str(e)}")
+        print(f"Error authenticating: {e}")
         return None
 
 # Convert column index to letter (e.g., 2 -> B, 27 -> AA)
@@ -258,11 +259,6 @@ def get_course_details(course_name):
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
-
-         # Check if this is a resubmission (not needed anymore as we'll clear the session)
-        if 'submitted' in session:
-            session.pop('submitted', None)  # Clear the submitted flag
-        
         data = request.form.to_dict()
         result = None
         teaching_load = None
@@ -280,38 +276,42 @@ def index():
                     result = "Error: Negative values are not allowed."
                     break
             else:
-                if update_google_sheet(data):
-                    session['submitted'] = True  # Mark as submitted
-                    result = "Thank you for submitting!"
-                    # Wait for 10 seconds to allow Google Sheets to calculate values
-                    time.sleep(10)
-                    
-                    # Fetch the calculated values from the sheet
-                    service = authenticate_google_sheets()
-                    if service:
-                        # Get teaching load from row 129 and total workload from row 169
-                        range_string = f"{SHEET_NAME}!{column_to_letter(column_counter - 1)}129:{column_to_letter(column_counter - 1)}169"
-                        response = service.spreadsheets().values().get(
-                            spreadsheetId=SPREADSHEET_ID,
-                            range=range_string
-                        ).execute()
-                        values = response.get('values', [])
-                        
-                        if values and len(values) >= 41:  # 169-129+1=41 rows
-                            try:
-                                teaching_load = values[0][0] if len(values[0]) > 0 else "N/A"  # Row 129
-                            except IndexError:
-                                teaching_load = "N/A"
-                            
-                            try:
-                                total_workload = values[40][0] if len(values[40]) > 0 else "N/A"  # Row 169
-                            except IndexError:
-                                total_workload = "N/A"
-                        else:
-                            teaching_load = "N/A"
-                            total_workload = "N/A"
+                # Validate course code format (extract 3 digits from course ID)
+                course_id = data['course_code']
+                if not re.match(r'^[A-Za-z]+\s[A-Za-z]+\d{3}$', course_id):
+                    result = "Error: Please select a valid course from the dropdown."
                 else:
-                    result = "Error submitting data."
+                    if update_google_sheet(data):
+                        result = "Thank you for submitting!"
+                        # Wait for 5 seconds to allow Google Sheets to calculate values
+                        time.sleep(20)
+                        
+                        # Fetch the calculated values from the sheet
+                        service = authenticate_google_sheets()
+                        if service:
+                            # Get teaching load from row 129 and total workload from row 169
+                            range_string = f"{SHEET_NAME}!{column_to_letter(column_counter - 1)}129:{column_to_letter(column_counter - 1)}169"
+                            response = service.spreadsheets().values().get(
+                                spreadsheetId=SPREADSHEET_ID,
+                                range=range_string
+                            ).execute()
+                            values = response.get('values', [])
+                            
+                            if values and len(values) >= 41:  # 169-129+1=41 rows
+                                try:
+                                    teaching_load = values[0][0] if len(values[0]) > 0 else "N/A"  # Row 129
+                                except IndexError:
+                                    teaching_load = "N/A"
+                                
+                                try:
+                                    total_workload = values[40][0] if len(values[40]) > 0 else "N/A"  # Row 169
+                                except IndexError:
+                                    total_workload = "N/A"
+                            else:
+                                teaching_load = "N/A"
+                                total_workload = "N/A"
+                    else:
+                        result = "Error submitting data."
         
         # Store the result in session to display after redirect
         session['submission_data'] = {
@@ -513,33 +513,64 @@ def index():
                             max-width: 100%;
                         }
                     }
+                    .searchable-dropdown {
+                        width: 25%;
+                        padding: 8px;
+                        border: 1px solid #ccc;
+                        border-radius: 4px;
+                        box-sizing: border-box;
+                    }
+                    
+                    datalist {
+                        max-height: 300px;
+                        overflow-y: auto;
+                    }
+                    
+                    .course-option {
+                        padding: 5px;
+                    }
+                    
+                    .course-id {
+                        font-weight: bold;
+                        color: #333;
+                    }
+                    
+                    .course-name {
+                        color: #666;
+                        font-size: 0.9em;
+                    }
                 </style>
             </head>
             <body>
                 <div class="container">
                     <img src="{{ url_for('static', filename='Logo_horizontal_ShortFormat.png') }}" alt="BITS Logo" class="logo">
-                    <h2>Faculty Workload Estimation</h2>
+                    <h2>Faculty Workload Form</h2>
                     
-                    <form action="" method="post" onsubmit="return validateForm()" id="workloadForm">
-                        <!-- 1. Professor Name -->
+                    <form action="" method="post" onsubmit="return validateForm()">
+                        <!-- 1. Faculty Information -->
                         <div class="section">
+                            <h3>1. Faculty Information</h3>
                             <div class="form-group">
-                                <label for="faculty_name">Professor Name:</label>
+                                <label for="faculty_name">Faculty Name:</label>
                                 <input type="text" id="faculty_name" name="faculty_name" required>
                             </div>
                         </div>
                         
                         <!-- 2. Course Information -->
                         <div class="section">
-                            <h3>Course Information</h3>
+                            <h3>2. Course Information</h3>
                             <div class="form-group">
-                                <label for="course_name">Course Name:</label>
-                                <select id="course_name" name="course_name" required onchange="fillCourseDetails()">
-                                    <option value="">-- Select a Course --</option>
+                                <label for="course_code">Course:</label>
+                                <input list="course_list" id="course_code" name="course_code" class="searchable-dropdown" 
+                                       placeholder="Type to search courses..." required>
+                                <datalist id="course_list">
                                     {% for course in courses %}
-                                    <option value="{{ course.name }}">{{ course.name }}</option>
+                                    <option value="{{ course.id }}" class="course-option">
+                                        <span class="course-id">{{ course.id }}</span> - 
+                                        <span class="course-name">{{ course.name }}</span>
+                                    </option>
                                     {% endfor %}
-                                </select>
+                                </datalist>
                             </div>
                             <div class="form-group">
                                 <label for="course_code">Course Code:</label>
@@ -852,7 +883,7 @@ def index():
                     </form>
                 </div>
                 <script>
-                    function validateForm() {
+                        function validateForm() {
                         const inputs = document.querySelectorAll('input[required], select[required]');
                         for (const input of inputs) {
                             if (!input.value) {
@@ -861,13 +892,28 @@ def index():
                             }
                         }
                         
-                        // Disable submit button and show loading
-                        document.getElementById('submitBtn').disabled = true;
-                        document.getElementById('loading').style.display = 'block';
+                        // Validate course format (should be in format "XX YY123")
+                        const courseInput = document.getElementById('course_code').value;
+                        if (!/^[A-Za-z]+\s[A-Za-z]+\d{3}$/.test(courseInput)) {
+                            alert("Please select a valid course from the dropdown.");
+                            return false;
+                        }
                         
                         return true;
                     }
                     
+                    // Enhance the dropdown search experience
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const courseInput = document.getElementById('course_code');
+                        
+                        // Show full course info when selected
+                        courseInput.addEventListener('input', function() {
+                            const selectedOption = document.querySelector(`#course_list option[value="${this.value}"]`);
+                            if (selectedOption) {
+                                this.setAttribute('data-course-name', selectedOption.textContent);
+                            }
+                        });
+                    });                  
                     function fillCourseDetails() {
                         const courseName = document.getElementById('course_name').value;
                         if (!courseName) return;
