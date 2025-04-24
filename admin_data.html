@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Data View</title>
+    <style>
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 8px; border: 1px solid #ddd; text-align: left; }
+        th { background-color: #f2f2f2; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+    </style>
+</head>
+<body>
+    <h1>All Workload Data</h1>
+    <a href="{{ url_for('download_all_data') }}">Download All Data as CSV</a>
+    <table>
+        <tr>
+            <th>Timestamp</th>
+            <th>Faculty</th>
+            <th>Course</th>
+            <th>Course ID</th>
+            <th>Prep Time</th>
+            <th>IC Load</th>
+            <th>Teaching</th>
+            <th>Evaluation</th>
+            <th>WILP</th>
+            <th>Engagement</th>
+            <th>Total</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+            <td>{{ row[4] }}</td>
+            <td>{{ "%.2f"|format(row[5]) }}</td>
+            <td>{{ "%.2f"|format(row[6]) }}</td>
+            <td>{{ "%.2f"|format(row[7]) }}</td>
+            <td>{{ "%.2f"|format(row[8]) }}</td>
+            <td>{{ "%.2f"|format(row[9]) }}</td>
+            <td>{{ "%.2f"|format(row[10]) }}</td>
+            <td>{{ "%.2f"|format(row[11]) }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
