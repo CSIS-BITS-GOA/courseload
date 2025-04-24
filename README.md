@@ -25,5 +25,5 @@ templates/
 ├── result.html                        # Results page
 └── admin_data.html                    # Admin dashboard
 static/
-├── Logo_horizontal_ShortFormat.png    # BITS logo
+└── Logo_horizontal_ShortFormat.png    # BITS logo
 ```
