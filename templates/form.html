@@ -18,8 +18,9 @@
             padding: 25px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 90%;
+            width: 100%;
             max-width: 800px;
+            box-sizing: border-box;
         }
         h2 {
             color: #333;
@@ -46,23 +47,20 @@
             align-items: center;
             margin-bottom: 12px;
             gap: 10px;
+            width: 100%;
         }
         label {
             font-weight: bold;
             color: #333;
-            width: 65%;
+            width: 100%;
             min-width: 300px;
         }
-        input[type="text"], 
-        input[type="number"], 
-        select {
+        input, select {
+            width: 100%;
             padding: 8px;
-            border: 1px solid #ccc;
+            border: 1px solid #ddd;
             border-radius: 4px;
             box-sizing: border-box;
-            flex: 1;
-            min-width: 100px;
-            max-width: 200px;
         }
         input[type="submit"] {
             background-color: #28a745;
@@ -77,7 +75,7 @@
             font-weight: bold;
         }
         input[type="submit"]:hover {
-            background-color: #218838;
+            background-color: #1a6b2b;
         }
         .logo {
             max-width: 200px;
@@ -111,16 +109,16 @@
             }
             input[type="text"],
             input[type="number"],
-            select {
+            input, select {
                 width: 100%;
                 max-width: 100%;
             }
         }
         .searchable-dropdown {
-            width: 97%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #c3dde9;
+            border-radius: 5px;
         }
         
         datalist {
@@ -181,7 +179,7 @@
         <form action="" method="post" onsubmit="return validateForm()">
             <!-- 1. Faculty Information -->
             <div class="section">
-                <h3>1. Faculty Information</h3>
+                <h3>Faculty Name</h3>
                 <div class="form-group">
                     <label for="faculty_name">Faculty Name:</label>
                     <input type="text" id="faculty_name" name="faculty_name" required>
@@ -190,7 +188,7 @@
             
             <!-- 2. Course Information -->
             <div class="section">
-                <h3>2. Course Information</h3>
+                <h3>Course Information</h3>
                 <!-- <div class="form-group">
                     <label for="course_year">Course Year:</label>
                     <input type="number" id="course_year" name="course_year" min="1" max="4" required>
@@ -238,7 +236,7 @@
                     <input type="number" id="course_practicals" name="course_practicals" min="0" required>
                 </div>
                 <div class="form-group">
-                    <label for="practical_hours">Number of hours of each practical:</label>
+                    <label for="practical_hours">Number of hours of EACH practical:</label>
                     <div class="time-input-group">
                         <input type="number" id="practical_hours" name="practical_hours" min="0" required>
                         <select id="practical_hours_unit" name="practical_hours_unit">
@@ -264,7 +262,7 @@
                     <input type="number" id="num_midsem" name="num_midsem" value="1" min="0" required>
                 </div>
                 <div class="form-group">
-                    <label for="quiz_duration">Duration of each quiz:</label>
+                    <label for="quiz_duration">Duration of EACH quiz:</label>
                     <div class="time-input-group">
                         <input type="number" id="quiz_duration" name="quiz_duration" min="0" required>
                         <select id="quiz_duration_unit" name="quiz_duration_unit">
@@ -310,7 +308,7 @@
                     <p><strong>Important:</strong> Please answer the following questions <strong>assuming no TA help</strong>. (We will take the TA information in the next section)</p>
                 </div>
                 <div class="form-group">
-                    <label for="is_ic">Are you an IC (In-Charge)?</label>
+                    <label for="is_ic">Are you an IC (Instructor In-Charge)?</label>
                     <select id="is_ic" name="is_ic" required>
                         <option value="YES">Yes</option>
                         <option value="NO">No</option>
@@ -348,7 +346,7 @@
                     <input type="number" id="break2_years" name="break2_years" min="0" required>
                 </div>
                 <div class="form-group">
-                    <label for="tutorial_prep_time">What is the amount of preparation time for each tutorial session:</label>
+                    <label for="tutorial_prep_time">What is the amount of preparation time for EACH tutorial session:</label>
                         <div class="time-input-group">
                             <input type="number" id="tutorial_prep_time" name="tutorial_prep_time" min="0" required>
                             <select id="tutorial_prep_time_unit" name="tutorial_prep_time_unit">
@@ -358,7 +356,7 @@
                         </div>
                     </div>
                 <div class="form-group">
-                    <label for="lab_prep_time">What is the amount of preparation time for each practicals (labs) session:</label>
+                    <label for="lab_prep_time">What is the amount of preparation time for EACH practicals (labs) session:</label>
                         <div class="time-input-group">
                             <input type="number" id="lab_prep_time" name="lab_prep_time" min="0" required>
                             <select id="lab_prep_time_unit" name="lab_prep_time_unit">
@@ -367,8 +365,59 @@
                             </select>
                         </div>
                     </div>
+
+                    <div class="form-group">
+                        <label for="quiz_qp_time">What is the amount of time for preparing the question paper for EACH quiz:</label>
+                            <div class="time-input-group">
+                                <input type="number" id="quiz_qp_time" name="quiz_qp_time" min="0" required>
+                                <select id="quiz_qp_time_unit" name="quiz_qp_time_unit">
+                                    <option value="minutes">Minutes</option>
+                                    <option value="hours">Hours</option>
+                                </select>
+                            </div>
+                        </div>
+                    <div class="form-group">
+                        <label for="assignment_qp_time">What is the amount of time for preparing the question paper for EACH assignment:</label>
+                            <div class="time-input-group">
+                                <input type="number" id="assignment_qp_time" name="assignment_qp_time" min="0" required>
+                                <select id="assignment_qp_time_unit" name="assignment_qp_time_unit">
+                                    <option value="minutes">Minutes</option>
+                                    <option value="hours">Hours</option>
+                                </select>
+                            </div>
+                        </div>
+                    <div class="form-group">
+                        <label for="homework_qp_time">What is the amount of time for preparing the question paper for EACH homework:</label>
+                            <div class="time-input-group">
+                                <input type="number" id="homework_qp_time" name="homework_qp_time" min="0" required>
+                                <select id="homework_qp_time_unit" name="homework_qp_time_unit">
+                                    <option value="minutes">Minutes</option>
+                                    <option value="hours">Hours</option>
+                                </select>
+                            </div>
+                        </div>
+                    <div class="form-group">
+                        <label for="midsem_qp_time">What is the amount of time for preparing the question paper for midsem:</label>
+                            <div class="time-input-group">
+                                <input type="number" id="midsem_qp_time" name="midsem_qp_time" min="0" required>
+                                <select id="midsem_qp_time_unit" name="midsem_qp_time_unit">
+                                    <option value="minutes">Minutes</option>
+                                    <option value="hours">Hours</option>
+                                </select>
+                            </div>
+                        </div>
+                    <div class="form-group">
+                        <label for="endsem_qp_time">What is the amount of time for preparing the question paper for comprehensive exam (endsem):</label>
+                            <div class="time-input-group">
+                                <input type="number" id="endsem_qp_time" name="endsem_qp_time" min="0" required>
+                                <select id="endsem_qp_time_unit" name="endsem_qp_time_unit">
+                                    <option value="minutes">Minutes</option>
+                                    <option value="hours">Hours</option>
+                                </select>
+                            </div>
+                        </div>
                 <div class="form-group">
-                    <label for="quiz_eval_time">What is the amount of time for correcting quiz for each student:</label>
+                    <label for="quiz_eval_time">What is the amount of time for correcting quiz for EACH student:</label>
                         <div class="time-input-group">
                             <input type="number" id="quiz_eval_time" name="quiz_eval_time" min="0" required>
                             <select id="quiz_eval_time_unit" name="quiz_eval_time_unit">
@@ -378,17 +427,17 @@
                         </div>
                     </div>
                 <div class="form-group">
-                    <label for="assignment_eval_time">What is the amount of time for correcting assignment (in lab) for each student:</label>
+                    <label for="assignment_eval_time">What is the amount of time for correcting assignment (in lab) for EACH student:</label>
                         <div class="time-input-group">
                             <input type="number" id="assignment_eval_time" name="assignment_eval_time" min="0" required>
-                            <select id="homework_eval_time_unit" name="homework_eval_time_unit">
+                            <select id="assignment_eval_time_unit" name="assignment_eval_time_unit">
                                 <option value="minutes">Minutes</option>
                                 <option value="hours">Hours</option>
                             </select>
                         </div>
                     </div>
                 <div class="form-group">
-                    <label for="homework_eval_time">What is the amount of time for correcting homework for each student:</label>
+                    <label for="homework_eval_time">What is the amount of time for correcting homework for EACH student:</label>
                         <div class="time-input-group">
                             <input type="number" id="homework_eval_time" name="homework_eval_time" min="0" required>
                             <select id="homework_eval_time_unit" name="homework_eval_time_unit">
@@ -398,7 +447,7 @@
                         </div>
                     </div>
                 <div class="form-group">
-                    <label for="midsem_eval_time">What is the amount of time for correcting midsem exam for each student:</label>
+                    <label for="midsem_eval_time">What is the amount of time for correcting midsem exam for EACH student:</label>
                         <div class="time-input-group">
                             <input type="number" id="midsem_eval_time" name="midsem_eval_time" min="0" required>
                             <select id="midsem_eval_time_unit" name="midsem_eval_time_unit">
@@ -408,7 +457,7 @@
                         </div>
                     </div>
                 <div class="form-group">
-                    <label for="endsem_eval_time">What is the amount of time for correcting comprehensive exam (endsem) for each student:</label>
+                    <label for="endsem_eval_time">What is the amount of time for correcting comprehensive exam (endsem) for EACH student:</label>
                     <div class="time-input-group">
                         <input type="number" id="endsem_eval_time" name="endsem_eval_time" min="0" required>
                         <select id="endsem_eval_time_unit" name="endsem_eval_time_unit">
@@ -417,56 +466,6 @@
                         </select>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="quiz_qp_time">What is the amount of time for preparing the question paper for each quiz:</label>
-                        <div class="time-input-group">
-                            <input type="number" id="quiz_qp_time" name="quiz_qp_time" min="0" required>
-                            <select id="quiz_qp_time_unit" name="quiz_qp_time_unit">
-                                <option value="minutes">Minutes</option>
-                                <option value="hours">Hours</option>
-                            </select>
-                        </div>
-                    </div>
-                <div class="form-group">
-                    <label for="assignment_qp_time">What is the amount of time for preparing the question paper for each assignment:</label>
-                        <div class="time-input-group">
-                            <input type="number" id="assignment_qp_time" name="assignment_qp_time" min="0" required>
-                            <select id="assignment_qp_time_unit" name="assignment_qp_time_unit">
-                                <option value="minutes">Minutes</option>
-                                <option value="hours">Hours</option>
-                            </select>
-                        </div>
-                    </div>
-                <div class="form-group">
-                    <label for="homework_qp_time">What is the amount of time for preparing the question paper for each homework:</label>
-                        <div class="time-input-group">
-                            <input type="number" id="homework_qp_time" name="homework_qp_time" min="0" required>
-                            <select id="homework_qp_time_unit" name="homework_qp_time_unit">
-                                <option value="minutes">Minutes</option>
-                                <option value="hours">Hours</option>
-                            </select>
-                        </div>
-                    </div>
-                <div class="form-group">
-                    <label for="midsem_qp_time">What is the amount of time for preparing the question paper for midsem:</label>
-                        <div class="time-input-group">
-                            <input type="number" id="midsem_qp_time" name="midsem_qp_time" min="0" required>
-                            <select id="midsem_qp_time_unit" name="midsem_qp_time_unit">
-                                <option value="minutes">Minutes</option>
-                                <option value="hours">Hours</option>
-                            </select>
-                        </div>
-                    </div>
-                <div class="form-group">
-                    <label for="endsem_qp_time">What is the amount of time for preparing the question paper for comprehensive exam (endsem):</label>
-                        <div class="time-input-group">
-                            <input type="number" id="endsem_qp_time" name="endsem_qp_time" min="0" required>
-                            <select id="endsem_qp_time_unit" name="endsem_qp_time_unit">
-                                <option value="minutes">Minutes</option>
-                                <option value="hours">Hours</option>
-                            </select>
-                        </div>
-                    </div>
                 <div class="form-group">
                     <label for="midsem_recheck_time">What is the amount of time taken for all midsem rechecks:</label>
                         <div class="time-input-group">
@@ -487,6 +486,7 @@
                             </select>
                         </div>
                     </div>
+                </div>
             
             <!-- 4. WILP Thesis Information -->
             <div class="section">
@@ -496,7 +496,7 @@
                     <input type="number" id="wilp_thesis" name="wilp_thesis" min="0" required>
                 </div>
                 <div class="form-group">
-                    <label for="wilp_approval_time">What is the amount of time taken for approving each WILP Thesis proposal:</label>
+                    <label for="wilp_approval_time">What is the amount of time taken for approving EACH WILP Thesis proposal:</label>
                         <div class="time-input-group">
                             <input type="number" id="wilp_approval_time" name="wilp_approval_time" min="0" required>
                             <select id="wilp_approval_time_unit" name="wilp_approval_time_unit">
@@ -506,7 +506,7 @@
                         </div>
                     </div>
                 <div class="form-group">
-                    <label for="wilp_midterm_eval_time">What is the amount of time taken for each midterm evaluation of WILP Thesis:</label>
+                    <label for="wilp_midterm_eval_time">What is the amount of time taken for EACH midterm evaluation of WILP Thesis:</label>
                         <div class="time-input-group">
                             <input type="number" id="wilp_midterm_eval_time" name="wilp_midterm_eval_time" min="0" required>
                             <select id="wilp_midterm_eval_time_unit" name="wilp_midterm_eval_time_unit">
@@ -516,7 +516,7 @@
                         </div>
                     </div>
                 <div class="form-group">
-                    <label for="wilp_final_eval_time">What is the amount of time taken for each final evaluation (viva) of WILP Thesis:</label>
+                    <label for="wilp_final_eval_time">What is the amount of time taken for EACH final evaluation (viva) of WILP Thesis:</label>
                         <div class="time-input-group">
                             <input type="number" id="wilp_final_eval_time" name="wilp_final_eval_time" min="0" required>
                             <select id="wilp_final_eval_time_unit" name="wilp_final_eval_time_unit">
@@ -584,7 +584,6 @@
             <input type="submit" value="Submit">
         </form>
     </div>
-<main></main>
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -645,25 +644,23 @@
             return true;
         }
     </script>
-
-<script>
-    document.getElementById('course_name').addEventListener('change', function() {
-        var courseId = this.value;
-        if (courseId) {
-            fetch('/get_course_details/' + encodeURIComponent(courseId))
-                .then(response => response.json())
-                .then(data => {
-                    if (!data.error) {
-                        document.getElementById('course_code').value = courseId;
-                        document.getElementById('course_lectures').value = data.L;
-                        document.getElementById('course_tutorials').value = data.T;
-                        document.getElementById('course_practicals').value = data.P;
-                    }
-                })
-                .catch(error => console.error('Error:', error));
-        }
-    });
+    <script>
+        document.getElementById('course_name').addEventListener('change', function() {
+            var courseId = this.value;
+            if (courseId) {
+                fetch('/get_course_details/' + encodeURIComponent(courseId))
+                    .then(response => response.json())
+                    .then(data => {
+                        if (!data.error) {
+                            document.getElementById('course_code').value = courseId;
+                            document.getElementById('course_lectures').value = data.L;
+                            document.getElementById('course_tutorials').value = data.T;
+                            document.getElementById('course_practicals').value = data.P;
+                        }
+                    })
+                    .catch(error => console.error('Error:', error));
+            }
+        });
     </script>
-
 </body>
 </html>
