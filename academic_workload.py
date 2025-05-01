@@ -710,39 +710,34 @@ def index():
                         result = "Error calculating workload."
         
         # Store the result in session
-        session['submission_data'] = {
+                session['submission_data'] = {
             'result': result,
             'teaching_load': teaching_load,
             'total_workload': total_workload,
             'intermediate_results': intermediate_results,
             'detailed_calculations': detailed_calculations,
             'course_id': course_id,
-            'course_name': course_name,  # Store course name in session
+            'course_name': course_name,
             'faculty_name': data['faculty_name']
         }
 
-        session['course_id'] = course_id
-        session['course_name'] = course_name
-        session['faculty_name'] = data['faculty_name']
-        session['detailed_calculations'] = detailed_calculations
         return redirect(url_for('index'))
     
-    # Check for stored submission result
-    submission_data = session.pop('submission_data', None)
+    # Check for stored submission result (don't pop it)
+    submission_data = session.get('submission_data')
     if submission_data:
-        # Store data in session for downloads
-        if submission_data['intermediate_results']:
-            session['intermediate_results'] = submission_data['intermediate_results']
-            session['detailed_calculations'] = submission_data['detailed_calculations']
-            session['faculty_name'] = submission_data['faculty_name']
-        
         return render_template('result.html', 
                             submission_data=submission_data,
-                            intermediate_results=submission_data['intermediate_results'],
                             detailed_calculations=submission_data['detailed_calculations'])
     
     # Show the form for the first time
     return render_template('form.html', courses=all_courses)
+
+# Add a new route to clear the session and return to the form
+@app.route('/new_form')
+def new_form():
+    session.pop('submission_data', None)  # Clear the results
+    return redirect(url_for('index'))
 
 @app.route('/admin/data')
 def admin_data():
