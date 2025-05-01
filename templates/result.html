@@ -91,6 +91,23 @@
             margin-left: auto;
             margin-right: auto;
         }
+        .new-form-button {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .new-form-button a {
+            background-color: #6c757d;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .new-form-button a:hover {
+            background-color: #5a6268;
+        }
     </style>
 </head>
 <body>
@@ -196,5 +213,17 @@
         </div>
         {% endif %}
     </div>
+    <div class="new-form-button" style="text-align: center; margin-top: 20px;">
+        <a href="{{ url_for('new_form') }}" class="download-btn" style="background-color: #28a745;">
+            Start New Calculation
+        </a>
+    </div>
+    <script>
+        document.querySelector('.btn-new').addEventListener('click', function(e) {
+            if (!confirm('Are you sure you want to start a new calculation? Any unsaved data will be lost.')) {
+                e.preventDefault();
+            }
+        });
+    </script>
 </body>
 </html>
