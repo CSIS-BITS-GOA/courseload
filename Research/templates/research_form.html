@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Research Workload Estimation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .container {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 800px;
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .section h3 {
+            color: #fff;
+            background-color: #007BFF;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 0;
+        }
+        .form-group {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 12px;
+            gap: 10px;
+        }
+        label {
+            font-weight: bold;
+            color: #333;
+            width: 65%;
+            min-width: 300px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .logo {
+            max-width: 200px;
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .dynamic-section {
+            border: 1px dashed #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #f0f8ff;
+        }
+        .result {
+            color: #28a745;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .error {
+            color: #dc3545;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="{{ url_for('static', filename='Logo_horizontal_ShortFormat.png') }}" alt="BITS Logo" class="logo">
+        <h2>Research Workload Estimation</h2>
+        
+        {% if result %}
+            {% if 'Error' in result %}
+                <div class="error">{{ result }}</div>
+            {% else %}
+                <div class="result">{{ result }}</div>
+            {% endif %}
+        {% endif %}
+        
+        <form action="{{ url_for('research.research_workload') }}" method="post">
+            <div class="section">
+                <h3>Faculty Information</h3>
+                <div class="form-group">
+                    <label for="faculty_name">Faculty Name:</label>
+                    <input type="text" id="faculty_name" name="faculty_name" required>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3>Supervision & Mentorship</h3>
+                <div class="form-group">
+                    <label for="N_phd">Number of PhD students supervised:</label>
+                    <input type="number" id="N_phd" name="N_phd" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="N_ms">Number of Master's students supervised:</label>
+                    <input type="number" id="N_ms" name="N_ms" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="N_fd">Number of Fd's students supervised:</label>
+                    <input type="number" id="N_fd" name="N_fd" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="N_out">Number of outside BITS's students supervised:</label>
+                    <input type="number" id="N_out" name="N_out" min="0" required>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3>Grant Applications & Funding</h3>
+                <div class="form-group">
+                    <label for="N_simple">Number of simple grants applied for per year:</label>
+                    <input type="number" id="N_simple" name="N_simple" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="N_medium">Number of medium-complexity grants applied for per year:</label>
+                    <input type="number" id="N_medium" name="N_medium" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="N_complex">Number of complex grants applied for per year:</label>
+                    <input type="number" id="N_complex" name="N_complex" min="0" required>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3>Research Paper Writing</h3>
+                <div id="papers-container">
+                    <!-- Papers will be added here dynamically -->
+                </div>
+                <input type="hidden" id="paper_count" name="paper_count" value="0">
+                <button type="button" id="add-paper-btn">Add Paper</button>
+            </div>
+            
+            <div class="section">
+                <h3>Conference & Seminar Participation</h3>
+                <div class="instruction-box">
+                    <p><strong>Note:</strong> Conference preparation time includes: registration, camera-ready submission, travel arrangements, presentation development, etc.</p>
+                </div>
+                <div id="conferences-container">
+                    <!-- Conferences will be added here dynamically -->
+                </div>
+                <input type="hidden" id="conf_count" name="conf_count" value="0">
+                <button type="button" id="add-conference-btn">Add Conference</button>
+            </div>
+            
+            <div class="section">
+                <h3>Computational/Lab Work</h3>
+                <div class="form-group">
+                    <label for="Research_type">Research Type:</label>
+                    <select id="Research_type" name="Research_type" required>
+                        <option value="1">Experimental</option>
+                        <option value="0">Theoretical</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="N_exp">Weekly experiments/simulations:</label>
+                    <input type="number" id="N_exp" name="N_exp" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="H_exp">Time per experiment/simulation (hrs):</label>
+                    <input type="number" id="H_exp" name="H_exp" min="0" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label for="N_people">Number of people involved per experiment/simulation:</label>
+                    <input type="number" id="N_people" name="N_people" min="1" required>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3>Collaborations & Academic Services</h3>
+                <div class="form-group">
+                    <label for="N_collab">Number of active collaborations (internal/external):</label>
+                    <input type="number" id="N_collab" name="N_collab" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="H_collab">Weekly time per collaboration (meetings, discussions, joint work):</label>
+                    <input type="number" id="H_collab" name="H_collab" min="0" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label for="N_conferences_organized">Number of conferences organized per year:</label>
+                    <input type="number" id="N_conferences_organized" name="N_conferences_organized" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="H_conference_planning">Total planning hours per conference (distributed over 52 weeks):</label>
+                    <input type="number" id="H_conference_planning" name="H_conference_planning" min="0" required>
+                </div>
+            </div>
+            
+            <button type="submit">Calculate Research Workload</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add paper functionality
+            document.getElementById('add-paper-btn').addEventListener('click', function() {
+                fetch("{{ url_for('research.add_paper') }}", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: 'paper_count=' + document.getElementById('paper_count').value
+                })
+                .then(response => response.text())
+                .then(html => {
+                    const container = document.getElementById('papers-container');
+                    container.insertAdjacentHTML('beforeend', html);
+                    document.getElementById('paper_count').value = 
+                        parseInt(document.getElementById('paper_count').value) + 1;
+                });
+            });
+            
+            // Add conference functionality
+            document.getElementById('add-conference-btn').addEventListener('click', function() {
+                fetch("{{ url_for('research.add_conference') }}", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: 'conf_count=' + document.getElementById('conf_count').value
+                })
+                .then(response => response.text())
+                .then(html => {
+                    const container = document.getElementById('conferences-container');
+                    container.insertAdjacentHTML('beforeend', html);
+                    document.getElementById('conf_count').value = 
+                        parseInt(document.getElementById('conf_count').value) + 1;
+                });
+            });
+        });
+    </script>
+    <script>
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+    </script>
+</body>
+</html>

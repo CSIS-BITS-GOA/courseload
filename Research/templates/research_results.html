@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Research Workload Estimation Results</title>
+    <style>
+        body {
+            font-family: Calibri, modern sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 800px;
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .result {
+            margin-top: 20px;
+            color: #28a745;
+            font-weight: bold;
+            text-align: center;
+        }
+        .workload-result {
+            margin-top: 20px;
+            color: #333;
+            font-weight: bold;
+            text-align: center;
+            background-color: #e9f7ef;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #28a745;
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        .section h3 {
+            color: #007BFF;
+            border-bottom: 1px solid #007BFF;
+            padding-bottom: 5px;
+        }
+        .detail-item {
+            margin-bottom: 10px;
+        }
+        .detail-label {
+            font-weight: bold;
+        }
+        .total-workload {
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #007BFF;
+            color: white;
+        }
+        .logo {
+            max-width: 200px;
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .download-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .download-btn {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .download-btn:hover {
+            background-color: #0056b3;
+        }
+        .btn-new {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-new:hover {
+            background-color: #1f7e35;
+        }
+
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .btn-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="{{ url_for('static', filename='Logo_horizontal_ShortFormat.png') }}" alt="BITS Logo" class="logo">
+        <h2>Research Workload Estimation Results</h2>
+        
+        <div class="result">{{ research_data.result }}</div>
+        
+        <div class="workload-result">
+            <p>Prof. <strong>{{ research_data.faculty_name }}</strong>, your Total Research Workload is <strong>{{ "%.2f"|format(research_data.total_workload) }} hours per week</strong>.</p>
+        </div>
+        
+        {% for category, details in detailed_calculations.items() %}
+        <div class="section">
+            <h3>{{ category }}</h3>
+            {% for line in details['description'] %}
+            <div class="detail-item">
+                <p>{{ line }}</p>
+            </div>
+            {% endfor %}
+            {% if details['value'] is defined %}
+            <div class="detail-item">
+                <span class="detail-label">Weekly Hours:</span> {{ "%.2f"|format(details['value']) }}
+            </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+        
+        <div class="total-workload">
+            Total Research Workload: {{ "%.2f"|format(research_data.total_workload) }} hours per week
+        </div>
+       
+        <div class="action-buttons">
+            <div class="download-buttons">
+                <form action="{{ url_for('research.download_research_csv') }}" method="post">
+                    <button type="submit" class="btn-new">Download as CSV</button>
+                </form>
+                <form action="{{ url_for('research.download_research_pdf') }}" method="post">
+                    <button type="submit" class="btn-new">Download Detailed PDF</button>
+                </form>
+            </div>
+            
+            <div class="btn-container">
+                <a href="{{ url_for('home') }}" class="btn-new">Start New Calculation</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('a.btn-new[href="{{ url_for('home') }}"]').addEventListener('click', function(e) {
+            if (!confirm('Are you sure you want to start a new calculation? Any unsaved data will be lost.')) {
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
