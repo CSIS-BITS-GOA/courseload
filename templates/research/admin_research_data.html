@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Data View</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .download-btn {
+            display: inline-block;
+            background-color: #28a745;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-bottom: 20px;
+        }
+        .download-btn:hover {
+            background-color: #1e7e34;
+        }
+        .pagination {
+            margin-top: 20px;
+        }
+        .pagination a {
+            display: inline-block;
+            padding: 8px 16px;
+            text-decoration: none;
+            border: 1px solid #ddd;
+            margin: 0 4px;
+        }
+        .pagination a.active {
+            background-color: #007BFF;
+            color: white;
+            border: 1px solid #007BFF;
+        }
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Research Workload Data</h1>
+    <a href="{{ url_for('research.research_download_all_data') }}" class="download-btn">Download All Data as CSV</a>
+    
+    <table>
+        <tr>
+            <th>Timestamp</th>
+            <th>Faculty</th>
+            <th>Supervision</th>
+            <th>Grants</th>
+            <th>Papers</th>
+            <th>Conferences</th>
+            <th>Lab Work</th>
+            <th>Collaborations</th>
+            <th>Total</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            <td>{{ row['timestamp'] }}</td>
+            <td>{{ row['faculty_name'] }}</td>
+            <td>{{ "%.2f"|format(row['supervision_hours']) }}</td>
+            <td>{{ "%.2f"|format(row['grants_hours']) }}</td>
+            <td>{{ "%.2f"|format(row['papers_hours']) }}</td>
+            <td>{{ "%.2f"|format(row['conferences_hours']) }}</td>
+            <td>{{ "%.2f"|format(row['lab_hours']) }}</td>
+            <td>{{ "%.2f"|format(row['collaborations_hours']) }}</td>
+            <td>{{ "%.2f"|format(row['total_workload']) }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+    <div class="pagination">
+        {% if page > 1 %}
+            <a href="{{ url_for('research.research_admin_data', page=page-1) }}">&laquo; Previous</a>
+        {% endif %}
+        
+        {% for p in range(1, (total // per_page) + 2) %}
+            {% if p == page %}
+                <a href="{{ url_for('research.research_admin_data', page=p) }}" class="active">{{ p }}</a>
+            {% else %}
+                <a href="{{ url_for('research.research_admin_data', page=p) }}">{{ p }}</a>
+            {% endif %}
+        {% endfor %}
+        
+        {% if page * per_page < total %}
+            <a href="{{ url_for('research.research_admin_data', page=page+1) }}">Next &raquo;</a>
+        {% endif %}
+    </div>
+</body>
+</html>
