@@ -1,21 +1,10 @@
 <div class="dynamic-section">
-    <h4>Conference {{ conf_num }}</h4>
-    <div class="form-group">
-        <label for="conf_{{ conf_num }}_prep">Preparation time (hrs):</label>
-        <input type="number" id="conf_{{ conf_num }}_prep" name="conf_{{ conf_num }}_prep" min="0" required>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h4>Conference {{ conf_num }}</h4>
+        <button type="button" class="delete-conference-btn" data-conf-num="{{ conf_num }}" style="background-color: #dc3545; color: white; border: none; border-radius: 4px; padding: 5px 10px; cursor: pointer;">Delete</button>
     </div>
     <div class="form-group">
-        <label for="conf_{{ conf_num }}_attend">Travel + attendance time (hrs):</label>
-        <input type="number" id="conf_{{ conf_num }}_attend" name="conf_{{ conf_num }}_attend" min="0" required>
-    </div>
-    <div class="form-group">
-        <label for="conf_{{ conf_num }}_quality">Conference Quality:</label>
-        <select id="conf_{{ conf_num }}_quality" name="conf_{{ conf_num }}_quality" required>
-            <option value="1.5">A</option>
-            <option value="1.4">A*</option>
-            <option value="1.4">B</option>
-            <option value="1.2">C</option>
-            <option value="1.0">Unranked</option>
-        </select>
+        <label for="conf_{{ conf_num }}_attend">Number of days of the conference (in days):</label>
+        <input type="number" id="conf_{{ conf_num }}_attend" name="conf_{{ conf_num }}_attend" min="0" max="10" required>
     </div>
 </div>
