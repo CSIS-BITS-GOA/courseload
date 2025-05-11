@@ -39,7 +39,6 @@ def init_research_db():
                 grants_hours DECIMAL(10,2) NOT NULL,
                 papers_hours DECIMAL(10,2) NOT NULL,
                 conferences_hours DECIMAL(10,2) NOT NULL,
-                lab_hours DECIMAL(10,2) NOT NULL,
                 collaborations_hours DECIMAL(10,2) NOT NULL,
                 total_workload DECIMAL(10,2) NOT NULL
             )
@@ -89,16 +88,16 @@ def calculate_research_workload(data):
     try:
         # Supervision calculations
         supervision = round(
-            (float(data['N_phd']) * 2.5 + 
+            (float(data['N_phd']) * 3 + 
             float(data['N_ms']) * 1.5 + 
-            float(data['N_fd']) * 0.75 + 
-            float(data['N_out']) * 1), 2)
+            float(data['N_fd']) * 1 + 
+            float(data['N_out']) * 1.25), 2)
         
         # Grants calculations
         grants = round(
-            (float(data['N_simple']) * 15 + 
-            float(data['N_medium']) * 40 + 
-            float(data['N_complex']) * 100
+            (float(data['N_simple']) * 30 + 
+            float(data['N_medium']) * 80 + 
+            float(data['N_complex']) * 150
         ) / 52, 2)
         
         # Papers calculations
@@ -107,40 +106,25 @@ def calculate_research_workload(data):
         for i in range(1, paper_count + 1):
             authorship = float(data.get(f'paper_{i}_authorship', 0.5))
             journal_quality = float(data.get(f'paper_{i}_quality', 1.0))
-            papers += round(
-                (7.5 * authorship * journal_quality) + 
-                (journal_quality * authorship)
-            , 2)
+            papers += (journal_quality * authorship)/52
         papers = round(papers, 2)
         
         # Conferences calculations
         conferences = 0
         conf_count = int(data.get('conf_count', 0))
         for i in range(1, conf_count + 1):
-            prep = float(data.get(f'conf_{i}_prep', 0))
             attend = float(data.get(f'conf_{i}_attend', 0))
-            conf_quality = float(data.get(f'conf_{i}_quality', 1.0))
-            conferences += round(
-                (prep*conf_quality + attend) / 52
-            , 2)
+            conferences += (24 + attend * 24) / 52
         conferences = round(conferences, 2)
-        
-        # Lab/Computational work
-        lab_work = round(
-            (float(data['Research_type']) * 
-            (float(data['N_exp']) * float(data['H_exp'])) / 
-            max(1, float(data['N_people']))), 2)
         
         # Collaborations & Services
         collaborations = round(
-            ((float(data['N_collab']) * float(data['H_collab'])) + 
-            float(data['N_conferences_organized']) * 
-            (float(data['H_conference_planning']) + 75)
-        ) / 52, 2)
+            (((float(data['N_collab']) * float(data['H_collab'])) + 
+            (float(data['N_conferences_organized']) * 1.5 + float(data['H_conference']) * 7)) / 52)
+            , 2)
         
         total = round(
-            supervision + grants + papers + conferences + 
-            lab_work + collaborations
+            (supervision + grants + papers + conferences + collaborations)
         , 2)
         
         detailed_calculations = {
@@ -168,8 +152,7 @@ def calculate_research_workload(data):
                 "value": papers,
                 "description": [
                     "Based on your input:",
-                    f"You are working on {paper_count} research papers with varying authorship roles",
-                    "and journal quality levels.",
+                    f"You are working on {paper_count} research papers with varying authorship roles and journal quality levels.",
                     "",
                     "From our calculations:",
                     "Paper writing involves both initial drafting and revisions, higher quality journals typically require more time for revisions and improvements, as a lead author, you typically invest more time than as a co-author.",
@@ -182,8 +165,7 @@ def calculate_research_workload(data):
                 "value": conferences,
                 "description": [
                     "Based on your input:",
-                    f"You participate in {conf_count} conferences with varying preparation",
-                    "and attendance requirements.",
+                    f"You participate in {conf_count} conferences with varying preparation and attendance requirements.",
                     "",
                     "From our calculations:",
                     "Conference participation includes both preparation time (writing papers, preparing presentations) according to the conference quality and actual attendance time (travel, presentations, networking).",
@@ -192,26 +174,11 @@ def calculate_research_workload(data):
                     f"{conferences:.2f} hours/week"
                 ]
             },
-            "Lab/Computational Work": {
-                "value": lab_work,
-                "description": [
-                    "Based on your input:",
-                    f"Your research is {'experimental' if data['Research_type'] == '1' else 'theoretical'} in nature,",
-                    f"with {data['N_exp']} experiments/simulations per week.",
-                    "",
-                    "From our calculations:",
-                    f"Each experiment/simulation takes approximately {data['H_exp']} hours, shared among {data['N_people']} people. Experimental research typically requires more hands-on lab time than theoretical work.",
-                    "",
-                    "Your total weekly lab/computational work time is estimated to be:",
-                    f"{lab_work:.2f} hours/week"
-                ]
-            },
             "Collaborations & Services": {
                 "value": collaborations,
                 "description": [
                     "Based on your input:",
-                    f"You have {data['N_collab']} active collaborations and organize",
-                    f"{data['N_conferences_organized']} conferences per year.",
+                    f"You have {data['N_collab']} active collaborations and organize {data['N_conferences_organized']} conferences per year.",
                     "",
                     "From our calculations:",
                     "Collaborations require regular meetings, discussions, and joint work sessions. Conference organization involves significant planning time before the event.",
@@ -223,7 +190,7 @@ def calculate_research_workload(data):
             "Total Research Workload": {
                 "value": total,
                 "description": [
-                    "Combining all components, your total weekly research workload includes: Student supervision, Grant application preparation, Research paper writing, Conference participation, Lab/computational work and Collaborations and academic services",
+                    "Combining all components, your total weekly research workload includes: Student supervision, Grant application preparation, Research paper writing, Conference participation and Collaborations and academic services",
                     "",
                     "Your complete weekly research workload is estimated to be:",
                     f"{total:.2f} hours/week"
@@ -236,7 +203,6 @@ def calculate_research_workload(data):
             "grants_hours": grants,
             "papers_hours": papers,
             "conferences_hours": conferences,
-            "lab_hours": lab_work,
             "collaborations_hours": collaborations,
             "total_workload": total,
             "detailed_calculations": detailed_calculations
@@ -269,7 +235,6 @@ def research_workload():
                     'grants_hours': calculation_result['grants_hours'],
                     'papers_hours': calculation_result['papers_hours'],
                     'conferences_hours': calculation_result['conferences_hours'],
-                    'lab_hours': calculation_result['lab_hours'],
                     'collaborations_hours': calculation_result['collaborations_hours'],
                     'total_workload': calculation_result['total_workload'],
                     'detailed_calculations': calculation_result['detailed_calculations']
@@ -335,7 +300,6 @@ def download_research_csv():
             "Grant Applications",
             "Research Papers",
             "Conferences & Seminars",
-            "Lab/Computational Work",
             "Collaborations & Services"
         ]
         
@@ -423,7 +387,6 @@ def download_research_pdf():
             "Grant Applications",
             "Research Papers",
             "Conferences & Seminars",
-            "Lab/Computational Work",
             "Collaborations & Services"
         ]
         
@@ -505,7 +468,6 @@ def research_download_all_data():
             cursor = conn.cursor()
             cursor.execute("SELECT * FROM research_workload ORDER BY timestamp DESC")
             data = cursor.fetchall()
-            
         if not data:
             return "No data available to download", 404
             
@@ -516,7 +478,7 @@ def research_download_all_data():
         writer.writerow([
             'ID', 'Timestamp', 'Faculty Name', 'Supervision Hours', 
             'Grants Hours', 'Papers Hours', 'Conferences Hours',
-            'Lab Hours', 'Collaborations Hours', 'Total Workload'
+            'Collaborations Hours', 'Total Workload'
         ])
         
         # Write data
