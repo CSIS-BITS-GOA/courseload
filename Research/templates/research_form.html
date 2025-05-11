@@ -97,6 +97,19 @@
             text-align: center;
             margin: 20px 0;
         }
+        .delete-paper-btn, .delete-conference-btn {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 10px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        
+        .delete-paper-btn:hover, .delete-conference-btn:hover {
+            background-color: #c82333;
+        }
     </style>
 </head>
 <body>
@@ -179,29 +192,6 @@
             </div>
             
             <div class="section">
-                <h3>Computational/Lab Work</h3>
-                <div class="form-group">
-                    <label for="Research_type">Research Type:</label>
-                    <select id="Research_type" name="Research_type" required>
-                        <option value="1">Experimental</option>
-                        <option value="0">Theoretical</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="N_exp">Weekly experiments/simulations:</label>
-                    <input type="number" id="N_exp" name="N_exp" min="0" required>
-                </div>
-                <div class="form-group">
-                    <label for="H_exp">Time per experiment/simulation (hrs):</label>
-                    <input type="number" id="H_exp" name="H_exp" min="0" step="0.1" required>
-                </div>
-                <div class="form-group">
-                    <label for="N_people">Number of people involved per experiment/simulation:</label>
-                    <input type="number" id="N_people" name="N_people" min="1" required>
-                </div>
-            </div>
-            
-            <div class="section">
                 <h3>Collaborations & Academic Services</h3>
                 <div class="form-group">
                     <label for="N_collab">Number of active collaborations (internal/external):</label>
@@ -216,8 +206,8 @@
                     <input type="number" id="N_conferences_organized" name="N_conferences_organized" min="0" required>
                 </div>
                 <div class="form-group">
-                    <label for="H_conference_planning">Total planning hours per conference (distributed over 52 weeks):</label>
-                    <input type="number" id="H_conference_planning" name="H_conference_planning" min="0" required>
+                    <label for="H_conference">Total duration of the planned conference in days:</label>
+                    <input type="number" id="H_conference" name="H_conference" min="0" required>
                 </div>
             </div>
             
@@ -262,6 +252,83 @@
                         parseInt(document.getElementById('conf_count').value) + 1;
                 });
             });
+            
+            // Delete paper functionality (using event delegation)
+            document.getElementById('papers-container').addEventListener('click', function(e) {
+                if (e.target.classList.contains('delete-paper-btn')) {
+                    const paperNum = e.target.getAttribute('data-paper-num');
+                    const paperSection = e.target.closest('.dynamic-section');
+                    paperSection.remove();
+                    
+                    // Update the remaining paper numbers if needed
+                    updateSectionNumbers('paper');
+                }
+            });
+            
+            // Delete conference functionality (using event delegation)
+            document.getElementById('conferences-container').addEventListener('click', function(e) {
+                if (e.target.classList.contains('delete-conference-btn')) {
+                    const confNum = e.target.getAttribute('data-conf-num');
+                    const confSection = e.target.closest('.dynamic-section');
+                    confSection.remove();
+                    
+                    // Update the remaining conference numbers if needed
+                    updateSectionNumbers('conf');
+                }
+            });
+            
+            // Function to update section numbers after deletion
+            function updateSectionNumbers(type) {
+                const container = type === 'paper' ? 
+                    document.getElementById('papers-container') : 
+                    document.getElementById('conferences-container');
+                
+                const sections = container.querySelectorAll('.dynamic-section');
+                sections.forEach((section, index) => {
+                    const header = section.querySelector('h4');
+                    const deleteBtn = section.querySelector('button');
+                    
+                    if (header) {
+                        header.textContent = `${type === 'paper' ? 'Paper' : 'Conference'} ${index + 1}`;
+                    }
+                    
+                    if (deleteBtn) {
+                        deleteBtn.setAttribute(`data-${type}-num`, index + 1);
+                    }
+                    
+                    // Update all input/select names and IDs
+                    const inputs = section.querySelectorAll('input, select');
+                    inputs.forEach(input => {
+                        const oldName = input.name;
+                        const newName = oldName.replace(
+                            new RegExp(`${type}_\\d+`), 
+                            `${type}_${index + 1}`
+                        );
+                        input.name = newName;
+                        input.id = newName;
+                    });
+                    
+                    // Update labels' for attributes
+                    const labels = section.querySelectorAll('label');
+                    labels.forEach(label => {
+                        if (label.htmlFor) {
+                            const oldFor = label.htmlFor;
+                            const newFor = oldFor.replace(
+                                new RegExp(`${type}_\\d+`), 
+                                `${type}_${index + 1}`
+                            );
+                            label.htmlFor = newFor;
+                        }
+                    });
+                });
+                
+                // Update the count hidden input
+                if (type === 'paper') {
+                    document.getElementById('paper_count').value = sections.length;
+                } else {
+                    document.getElementById('conf_count').value = sections.length;
+                }
+            }
         });
     </script>
     <script>
