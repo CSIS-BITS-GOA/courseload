@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, redirect, url_for, session, jsonify, send_file, request
+from flask import Flask, Blueprint, render_template, request, redirect, url_for, session, jsonify, send_file
 from werkzeug.utils import secure_filename
 import os
 import re
@@ -15,13 +15,18 @@ import sqlite3
 from contextlib import closing
 from pathlib import Path
 
+# Use the blueprint from __init__.py
+from . import academic_bp
+
+#academic_bp = Blueprint('academic', __name__, template_folder='templates')
+
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 app.config['SESSION_TYPE'] = 'filesystem'
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(hours=1)
 
 # Database setup
-DATABASE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'workload_data.db')
+DATABASE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'academic_workload_data.db')
 
 def init_db():
     """Initialize the database with required tables"""
@@ -51,9 +56,16 @@ def init_db():
 
 # At startup
 if not os.path.exists(DATABASE):
+    os.makedirs(os.path.dirname(DATABASE), exist_ok=True)  # Ensure directory exists
     init_db()
 else:
     print(f"Using existing database at {os.path.abspath(DATABASE)}")
+    # Verify the table exists
+    try:
+        with sqlite3.connect(DATABASE) as conn:
+            conn.execute("SELECT 1 FROM workload LIMIT 1")
+    except sqlite3.OperationalError:
+        init_db()  # Table doesn't exist, initialize it
 
 
 # Constants
@@ -190,7 +202,7 @@ def save_results_to_file(data):
         raise  # Re-raise to see in console
 
 # Load courses at startup
-all_courses = parse_courses_file('courses.csv')
+all_courses = parse_courses_file('Academic/courses.csv')
 if not all_courses:
     print("Warning: No courses were loaded. Check the course file format.")
 
@@ -651,16 +663,18 @@ def download_pdf():
         print(f"Error generating PDF: {str(e)}")
         return "Error generating PDF. Please try again.", 500
 
-@app.route('/', methods=['GET', 'POST'])
+@academic_bp.route('/', methods=['GET', 'POST'])
 def index():
+    # Clear any existing session data when loading the form
+    if request.method == 'GET':
+        session.pop('submission_data', None)
+
     if request.method == 'POST':
         data = request.form.to_dict()
         result = None
         teaching_load = None
         total_workload = None
-        intermediate_results = None
         detailed_calculations = None
-        
         course_full = data.get('course_name', '')
         course_parts = course_full.split(' (')
         course_name = course_parts[0].strip() if course_parts else ''
@@ -673,87 +687,246 @@ def index():
         if not all(data.values()):
             result = "Error: All fields are required."
         else:
-            # Validate numeric inputs
-            for key, value in data.items():
-                if key.endswith('_unit') or key == 'is_ic':
-                    continue
-                if value.isdigit() and int(value) < 0:
-                    result = "Error: Negative values are not allowed."
-                    break
-            else:
-                # Validate course code format
-                course_id = data['course_code']
-                if not re.match(r'^[A-Za-z]+\s[A-Za-z]+\d{3}$', course_id):
-                    result = "Error: Please select a valid course from the dropdown."
-                else:
-                    # Perform calculations
-                    calculation_result = calculate_workload(data)
-                    if calculation_result:
-                        result = "Thank you for submitting!"
-                        teaching_load = f"{calculation_result['teaching_load']:.2f}"
-                        total_workload = f"{calculation_result['total_workload']:.2f}"
-                        intermediate_results = calculation_result['intermediate_results']
-                        detailed_calculations = calculation_result['detailed_calculations']
-                        
-                        # Save the results
-                        save_data = {
-                            'faculty_name': data['faculty_name'],
-                            'course_name': course_name,  
-                            'course_id': course_id,
-                            'course_code': data['course_code'],
-                            'teaching_load': teaching_load,
-                            'total_workload': total_workload,
-                            'detailed_calculations': detailed_calculations
-                        }
-                        save_results_to_file(save_data)
-                    else:
-                        result = "Error calculating workload."
-        
-        # Store the result in session
+            calculation_result = calculate_workload(data)
+            if calculation_result:
+                result = "Academic workload calculated successfully!"
+                teaching_load = f"{calculation_result['teaching_load']:.2f}"
+                total_workload = f"{calculation_result['total_workload']:.2f}"
+                detailed_calculations = calculation_result['detailed_calculations']
+                
+                # Save the results
+                save_data = {
+                    'faculty_name': data['faculty_name'],
+                    'course_name': course_name,  
+                    'course_id': course_id,
+                    'course_code': data['course_code'],
+                    'teaching_load': teaching_load,
+                    'total_workload': total_workload,
+                    'detailed_calculations': detailed_calculations
+                }
+                save_results_to_file(save_data)
+                
+                # Store in session for display
                 session['submission_data'] = {
-            'result': result,
-            'teaching_load': teaching_load,
-            'total_workload': total_workload,
-            'intermediate_results': intermediate_results,
-            'detailed_calculations': detailed_calculations,
-            'course_id': course_id,
-            'course_name': course_name,
-            'faculty_name': data['faculty_name']
-        }
-
-        return redirect(url_for('index'))
+                    'result': result,
+                    'faculty_name': data['faculty_name'],
+                    'course_name': course_name,
+                    'course_id': course_id,
+                    'teaching_load': teaching_load,
+                    'total_workload': total_workload,
+                    'detailed_calculations': detailed_calculations
+                }
+                return redirect(url_for('academic.results'))
+            else:
+                result = "Error calculating academic workload."
+        
+        return render_template('academic_form.html', result=result, courses=all_courses)
     
-    # Check for stored submission result (don't pop it)
+    return render_template('academic_form.html', courses=all_courses)
+
+@academic_bp.route('/results')
+def results():
     submission_data = session.get('submission_data')
-    if submission_data:
-        return render_template('result.html', 
-                            submission_data=submission_data,
-                            detailed_calculations=submission_data['detailed_calculations'])
+    if not submission_data:
+        return redirect(url_for('academic.index'))
     
-    # Show the form for the first time
-    return render_template('form.html', courses=all_courses)
+    # Ensure all required data is present
+    required_keys = ['result', 'faculty_name', 'course_name', 'course_id', 
+                    'teaching_load', 'total_workload', 'detailed_calculations']
+    if not all(key in submission_data for key in required_keys):
+        return redirect(url_for('academic.index'))
+    
+    return render_template('academic_results.html',
+                         submission_data=submission_data,
+                         detailed_calculations=submission_data['detailed_calculations'])
 
-# Add a new route to clear the session and return to the form
-@app.route('/new_form')
+@academic_bp.route('/get_course_details/<course_name>')
+def get_course_details(course_name):
+    course_name = course_name.split(' (')[0].strip()
+    course = next((c for c in all_courses if c['name'] == course_name), None)
+    if course:
+        return jsonify({
+            'id': course['id'],
+            'L': course['L'],
+            'T': course['T'],
+            'P': course['P']
+        })
+    return jsonify({'error': 'Course not found'}), 404
+
+@academic_bp.route('/download_csv', methods=['POST'])
+def download_csv():
+    try:
+        if 'submission_data' not in session:
+            return "No data to download", 400
+            
+        submission_data = session['submission_data']
+        faculty_name = submission_data['faculty_name']
+        course_name = submission_data['course_name']
+        course_id = submission_data['course_id']
+        data = submission_data['detailed_calculations']
+        
+        # Prepare CSV data
+        csv_content = []
+        csv_content.append("Academic Workload Calculation Report")
+        csv_content.append(f"Faculty: {faculty_name}")
+        csv_content.append(f"Course: {course_name} ({course_id})")
+        csv_content.append(f"Generated on: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+        csv_content.append("")
+        csv_content.append(f"Total Workload: {submission_data['total_workload']} hours per week")
+        csv_content.append("")
+        
+        # Add each section
+        section_order = [
+            "Preparation Time",
+            "Instructor In-Charge",
+            "Classroom Hours",
+            "Evaluation Time",
+            "WILP Thesis Supervision",
+            "Student Engagement"
+        ]
+        
+        for section in section_order:
+            if section in data:
+                csv_content.append(section)
+                for line in data[section]['NATURAL_LANGUAGE']:
+                    csv_content.append(line)
+                csv_content.append("")
+        
+        # Create BytesIO buffer
+        output = BytesIO()
+        output.write("\n".join(csv_content).encode('utf-8'))
+        output.seek(0)
+        
+        return send_file(
+            output,
+            mimetype='text/csv',
+            as_attachment=True,
+            download_name=f'academic_workload_{faculty_name.replace(" ", "_")}.csv'
+        )
+        
+    except Exception as e:
+        print(f"Error generating CSV: {str(e)}")
+        return "Error generating file. Please try again.", 500
+
+@academic_bp.route('/download_pdf', methods=['POST'])
+def download_pdf():
+    try:
+        if 'submission_data' not in session:
+            return "No data available for PDF generation. Please submit the form first.", 400
+            
+        submission_data = session['submission_data']
+        faculty_name = submission_data['faculty_name']
+        course_name = submission_data['course_name']
+        course_id = submission_data['course_id']
+        data = submission_data['detailed_calculations']
+        
+        # Create PDF in memory
+        buffer = BytesIO()
+        
+        doc = SimpleDocTemplate(
+            buffer,
+            pagesize=letter,
+            rightMargin=40,
+            leftMargin=40,
+            topMargin=40,
+            bottomMargin=40,
+            title=f"Academic Workload Calculation for {faculty_name}"
+        )
+        
+        styles = getSampleStyleSheet()
+        
+        # Custom styles
+        styles.add(ParagraphStyle(
+            name='NaturalLanguage',
+            parent=styles['Normal'],
+            fontSize=11,
+            leading=14,
+            spaceAfter=6
+        ))
+        
+        elements = []
+        
+        # Title
+        elements.append(Paragraph(
+            f"Detailed Academic Workload Calculation for {faculty_name}",
+            styles['Title']
+        ))
+        elements.append(Paragraph(
+            f"Course: {course_name} ({course_id})",
+            styles['Normal']
+        ))
+        elements.append(Paragraph(
+            f"Generated on: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
+             styles['Normal']
+        ))
+        elements.append(Spacer(1, 12))
+        
+        # Total workload
+        elements.append(Paragraph(
+            f"Total Workload: {submission_data['total_workload']} hours per week",
+            styles['Heading2']
+        ))
+        elements.append(Spacer(1, 12))
+        
+        # Add each calculation section
+        section_order = [
+            "Preparation Time",
+            "Instructor In-Charge",
+            "Classroom Hours",
+            "Evaluation Time",
+            "WILP Thesis Supervision",
+            "Student Engagement"
+        ]
+        
+        for section in section_order:
+            if section in data:
+                # Section header
+                elements.append(Paragraph(
+                    f"<b>{section}</b>",
+                    styles['Heading2']
+                ))
+                
+                # Add description
+                for line in data[section]['NATURAL_LANGUAGE']:
+                    elements.append(Paragraph(
+                        line,
+                        styles['NaturalLanguage']
+                    ))
+                
+                elements.append(Spacer(1, 12))
+        
+        doc.build(elements)
+        buffer.seek(0)
+        
+        return send_file(
+            buffer,
+            mimetype='application/pdf',
+            as_attachment=True,
+            download_name=f'academic_workload_{faculty_name.replace(" ", "_")}.pdf'
+        )
+        
+    except Exception as e:
+        print(f"Error generating PDF: {str(e)}")
+        return "Error generating PDF. Please try again.", 500
+
+@academic_bp.route('/new_form')
 def new_form():
     session.pop('submission_data', None)  # Clear the results
-    return redirect(url_for('index'))
+    return redirect(url_for('academic.index'))
 
-@app.route('/admin/data')
+@academic_bp.route('/admin/data')
 def admin_data():
     try:
         page = request.args.get('page', 1, type=int)
-        per_page = 50  # Items per page
+        per_page = 50
         
         with sqlite3.connect(DATABASE) as conn:
             conn.row_factory = sqlite3.Row
             cursor = conn.cursor()
             
-            # Get total count for pagination
             cursor.execute("SELECT COUNT(*) FROM workload")
             total = cursor.fetchone()[0]
             
-            # Get paginated data
             cursor.execute("""
                 SELECT * FROM workload 
                 ORDER BY timestamp DESC 
@@ -761,15 +934,22 @@ def admin_data():
             """, (per_page, (page-1)*per_page))
             data = cursor.fetchall()
             
-        return render_template('admin_data.html', 
+        # Debug output
+        print(f"Data fetched: {len(data)} records")
+        for row in data:
+            print(dict(row))
+            
+        return render_template('academic/admin_data.html', 
                             data=data,
                             page=page,
                             per_page=per_page,
                             total=total)
     except Exception as e:
+        print(f"Error in admin_data: {str(e)}")
         return f"Database error: {str(e)}", 500
 
-@app.route('/admin/download_all')
+# Update the download_all_data route:
+@academic_bp.route('/admin/download_all')
 def download_all_data():
     try:
         with sqlite3.connect(DATABASE) as conn:
@@ -777,7 +957,9 @@ def download_all_data():
             cursor.execute("SELECT * FROM workload ORDER BY timestamp DESC")
             data = cursor.fetchall()
             
-        # Create CSV in memory
+        if not data:
+            return "No data available to download", 404
+            
         output = BytesIO()
         writer = csv.writer(output)
         
@@ -789,92 +971,15 @@ def download_all_data():
         ])
         
         # Write data
-        for row in data:
-            writer.writerow(row)
-            
+        writer.writerows(data)
         output.seek(0)
+        
         return send_file(
             output,
             mimetype='text/csv',
             as_attachment=True,
-            download_name='all_workload_data.csv'
+            download_name='academic_workload_data.csv'
         )
     except Exception as e:
+        print(f"Download error: {str(e)}")
         return f"Error generating download: {str(e)}", 500
-    
-@app.route('/debug_db')
-def debug_db():
-    """Debug route to check database contents"""
-    try:
-        with sqlite3.connect(DATABASE) as conn:
-            conn.row_factory = sqlite3.Row  # For nicer dictionary output
-            cursor = conn.cursor()
-            
-            # First show all tables
-            cursor.execute("SELECT name FROM sqlite_master WHERE type='table'")
-            tables = cursor.fetchall()
-            
-            # Then show workload data if table exists
-            workload_data = []
-            if any(t['name'] == 'workload' for t in tables):
-                cursor.execute("SELECT * FROM workload ORDER BY timestamp DESC")
-                workload_data = [dict(row) for row in cursor.fetchall()]
-            
-            return render_template_string('''
-                <h1>Database Debug</h1>
-                <h2>Tables in Database</h2>
-                <pre>{{ tables|tojson(indent=2) }}</pre>
-                <h2>Workload Data ({{ workload_data|length }} rows)</h2>
-                <pre>{{ workload_data|tojson(indent=2) }}</pre>
-                <h2>Database Location</h2>
-                <p>{{ db_path }}</p>
-            ''', 
-            tables=tables,
-            workload_data=workload_data,
-            db_path=os.path.abspath(DATABASE))
-            
-    except Exception as e:
-        return f"<h1>Database Error</h1><pre>{str(e)}</pre>", 500
-    
-@app.route('/db_info')
-def db_info():
-    db_status = {
-        "database_path": os.path.abspath(DATABASE),
-        "exists": os.path.exists(DATABASE),
-        "size": os.path.getsize(DATABASE) if os.path.exists(DATABASE) else 0,
-        "tables": []
-    }
-    
-    if db_status["exists"]:
-        try:
-            with sqlite3.connect(DATABASE) as conn:
-                cursor = conn.cursor()
-                cursor.execute("SELECT name FROM sqlite_master WHERE type='table'")
-                db_status["tables"] = [row[0] for row in cursor.fetchall()]
-        except Exception as e:
-            db_status["error"] = str(e)
-    
-    return jsonify(db_status)
-
-@app.route('/clear_session')
-def clear_session():
-    session.clear()
-    return "Session cleared"
-
-if __name__ == '__main__':
-    # Create templates directory if it doesn't exist
-    if not os.path.exists('templates'):
-        os.makedirs('templates')
-    
-    # Create results file if it doesn't exist
-    if not os.path.exists(RESULTS_FILE):
-        with open(RESULTS_FILE, 'w', newline='') as f:
-            writer = csv.writer(f)
-            writer.writerow([
-                'timestamp', 'faculty_name', 'course_name','course_id', 'course_code',
-                'teaching_load', 'total_workload', 'preparation_time',
-                'instructor_charge', 'evaluation_time', 'student_engagement'
-            ])
-    
-    print("Starting application...")
-    app.run(debug=True, host='0.0.0.0', port=5001)
